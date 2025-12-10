@@ -12,8 +12,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
-  --color-virtus-yellow: #FFC107;
-  --color-virtus-blue: #111827;
+  --color-virtus-yellow: #F7A211;
+  --color-virtus-blue: #1F325A;
 }
 
 @media (prefers-color-scheme: dark) {

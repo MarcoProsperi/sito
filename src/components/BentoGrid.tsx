@@ -22,7 +22,8 @@ const items = [
         href: "/news",
         icon: Newspaper,
         colSpan: "col-span-1",
-        bg: "bg-gray-900"
+        bg: "bg-virtus-yellow",
+        textColor: "text-virtus-blue"
     },
     {
         title: "MINIBASKET",
@@ -41,7 +42,7 @@ const items = [
         href: "/calendario",
         icon: Calendar,
         colSpan: "col-span-1 md:col-span-2",
-        bg: "bg-gray-800"
+        bg: "bg-virtus-blue"
     }
 ];
 
