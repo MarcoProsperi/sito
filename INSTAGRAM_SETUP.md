@@ -53,3 +53,28 @@ Il sito ora mostrerà automaticamente i vostri 6 post Instagram più recenti nel
 ## 🆘 Problemi?
 
 Se hai difficoltà con la configurazione API, il sito funziona comunque con i pulsanti social nel Footer. Puoi sempre aggiungere l'integrazione Instagram in seguito!
+
+Come avviare il server locale per vedere il sito
+1️⃣ Installa le dipendenze (solo la prima volta o se hai modificato package.json):
+
+bash
+cd C:\Users\fargh\.gemini\antigravity\scratch\virtus-velletri-app
+npm install
+2️⃣ Avvia il server di sviluppo:
+
+bash
+npm run dev
+Il comando avvierà Next.js in modalità development.
+L’app sarà disponibile all’indirizzo http://localhost:3000.
+3️⃣ Apri il browser e naviga a:
+
+Home page: http://localhost:3000/
+Pagina “giovanili” (la nuova homepage NBA‑style): http://localhost:3000/giovanili
+4️⃣ Aggiornamenti live
+Ogni volta che salvi un file, Next.js ricompila automaticamente e il browser si aggiorna in tempo reale.
+
+Suggerimenti rapidi
+Arresta il server: premi Ctrl +C nella console dove è in esecuzione npm run dev.
+Porta diversa: se la porta 3000 è occupata, Next.js ti chiederà di usarne un’altra (es. 3001). Basta confermare.
+Ambiente di produzione (solo per test finali):
+bash
