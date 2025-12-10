@@ -1,0 +1,70 @@
+[
+  {
+    "label": "Home",
+    "href": "/"
+  },
+  {
+    "label": "Società",
+    "href": "/storia",
+    "children": [
+      {
+        "label": "Storia",
+        "href": "/storia"
+      },
+      {
+        "label": "Organigramma",
+        "href": "/organigramma"
+      },
+      {
+        "label": "Staff Tecnico",
+        "href": "/staff"
+      },
+      {
+        "label": "Dove Siamo",
+        "href": "/contatti"
+      },
+      {
+        "label": "Collaborazioni",
+        "href": "/collaborazioni"
+      }
+    ]
+  },
+  {
+    "label": "News",
+    "href": "/news"
+  },
+  {
+    "label": "Giovanili",
+    "href": "/giovanili"
+  },
+  {
+    "label": "Minibasket",
+    "href": "/minibasket"
+  },
+  {
+    "label": "Iscrizioni",
+    "href": "/iscrizioni",
+    "children": [
+      {
+        "label": "Moduli",
+        "href": "/iscrizioni"
+      },
+      {
+        "label": "Contributi",
+        "href": "/contributi"
+      }
+    ]
+  },
+  {
+    "label": "Centro Estivo",
+    "href": "/centro-estivo"
+  },
+  {
+    "label": "Galleria",
+    "href": "/gallery"
+  },
+  {
+    "label": "Contatti",
+    "href": "/contatti"
+  }
+]
