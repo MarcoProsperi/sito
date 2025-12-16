@@ -3,9 +3,12 @@
 import Hero from "@/components/Hero";
 import BentoGrid from "@/components/BentoGrid";
 import InstagramGrid from "@/components/InstagramGrid";
+import NewsTicker from "@/components/NewsTicker";
 import Link from "next/link";
 import { Calendar, Trophy, Users } from "lucide-react";
 import Image from "next/image";
+import CalendarWidget from "@/components/CalendarWidget";
+import StandingsWidget from "@/components/StandingsWidget";
 
 export default function AlternativeHome() {
     return (
@@ -33,15 +36,30 @@ export default function AlternativeHome() {
                 </div>
             </section>
 
-            {/* Main Grid Layout - NBA Style */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            {/* News Ticker */}
+            <NewsTicker
+                news={[
+                    { id: 1, text: "Grande vittoria per l'Under 17 contro Frascati!", link: "/news/vittoria-u17" },
+                    { id: 2, text: "Iscrizioni aperte per la stagione 2024/25 - Prenota la tua prova gratuita", link: "/iscrizioni" },
+                    { id: 3, text: "Festa di Natale Virtus: 20 Dicembre al Palazzetto", link: "/news/festa-natale" },
+                    { id: 4, text: "Benvenuto al nuovo Main Sponsor: Pizzeria Da Mario", link: "/news/sponsor" },
+                ]}
+            />
+
+            {/* c- NBA Style */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-12">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-fr">
 
                     {/* Left Column - Main Content (2/3) */}
                     <div className="lg:col-span-2 space-y-8 flex flex-col h-full">
 
                         {/* Bento Grid - Il Mondo Virtus */}
-                        <BentoGrid />
+                        <div>
+                            <h2 className="text-3xl font-display font-bold text-virtus-blue uppercase tracking-tight mb-6">
+                                Il Mondo Virtus
+                            </h2>
+                            <BentoGrid compact={true} />
+                        </div>
 
                         {/* Featured News */}
                         <section>
@@ -72,10 +90,13 @@ export default function AlternativeHome() {
                             </div>
                         </section>
 
+                        {/* Standings Widget */}
+                        <StandingsWidget />
+
                     </div>
 
                     {/* Right Sidebar (1/3) */}
-                    <div className="flex flex-col h-full space-y-8 mt-8">
+                    <div className="flex flex-col h-full space-y-8">
 
                         {/* Vertical Sponsor Carousel */}
                         <section className="bg-white rounded-lg p-6 shadow-md">
@@ -136,6 +157,9 @@ export default function AlternativeHome() {
                                 </div>
                             </div>
                         </section>
+
+                        {/* Calendar Widget */}
+                        <CalendarWidget />
 
                     </div>
                 </div>

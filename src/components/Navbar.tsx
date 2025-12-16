@@ -55,7 +55,7 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                             <div key={item.label} className="relative group">
                                 {item.children ? (
                                     <button
-                                        className={`flex items-center gap-1 text-base font-display font-medium transition-colors uppercase tracking-wider py-2 ${pathname.startsWith(item.href) && item.href !== "/" ? "text-virtus-yellow font-bold" : "text-white/90 hover:text-virtus-yellow"
+                                        className={`flex items-center gap-1 text-sm font-display font-medium transition-colors uppercase tracking-wider py-2 ${pathname.startsWith(item.href) && item.href !== "/" ? "text-virtus-yellow font-bold" : "text-white/90 hover:text-virtus-yellow"
                                             }`}
                                     >
                                         {item.label}
@@ -64,7 +64,7 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className={`text-base font-display font-medium transition-colors uppercase tracking-wider relative group-hover:text-virtus-yellow ${pathname === item.href ? "text-virtus-yellow font-bold" : "text-white/90"
+                                        className={`text-sm font-display font-medium transition-colors uppercase tracking-wider relative group-hover:text-virtus-yellow ${pathname === item.href ? "text-virtus-yellow font-bold" : "text-white/90"
                                             }`}
                                     >
                                         {item.label}
@@ -74,7 +74,7 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
 
                                 {/* Dropdown */}
                                 {item.children && (
-                                    <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                                    <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
                                         <div className="bg-virtus-blue border border-white/10 rounded-none shadow-2xl overflow-hidden py-2">
                                             {item.children.map((child) => (
                                                 <Link

@@ -30,6 +30,10 @@
     ]
   },
   {
+    "label": "DR1",
+    "href": "/squadre"
+  },
+  {
     "label": "News",
     "href": "/news"
   },
