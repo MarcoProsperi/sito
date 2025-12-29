@@ -10,7 +10,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-2xl font-bold mb-4 text-virtus-yellow tracking-tight">VIRTUS VELLETRI</h3>
                         <p className="text-white/80 mb-6 leading-relaxed">
-                            Associazione Sportiva Dilettantistica.<br />
+                            s.s.dil. Virtus Velletri.<br />
                             Promuoviamo il basket e i suoi valori dal 1996.
                         </p>
                         <div className="flex space-x-4">
@@ -28,7 +28,6 @@ export default function Footer() {
                         <h3 className="text-lg font-bold mb-6 text-virtus-yellow">Link Rapidi</h3>
                         <ul className="space-y-3 text-white/80">
                             <li><Link href="/storia" className="hover:text-virtus-yellow transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-virtus-yellow rounded-full"></span>La Storia</Link></li>
-                            <li><Link href="/squadre" className="hover:text-virtus-yellow transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-virtus-yellow rounded-full"></span>Le Squadre</Link></li>
                             <li><Link href="/gallery" className="hover:text-virtus-yellow transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-virtus-yellow rounded-full"></span>Galleria</Link></li>
                             <li><Link href="/contatti" className="hover:text-virtus-yellow transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-virtus-yellow rounded-full"></span>Contatti</Link></li>
                         </ul>
@@ -50,8 +49,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
-                    <p>&copy; {new Date().getFullYear()} A.S.D. Virtus Velletri. Tutti i diritti riservati.</p>
+                <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm space-y-2">
+                    <p>&copy; {new Date().getFullYear()} s.s.dil. Virtus Velletri. Tutti i diritti riservati.</p>
+                    <p className="text-xs opacity-75">Realizzazione sito: <span className="font-semibold text-virtus-yellow">batlh studios</span></p>
                 </div>
             </div>
         </footer>

@@ -24,7 +24,7 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
     };
 
     return (
-        <nav className="fixed w-full z-50 backdrop-blur-md shadow-lg border-b border-white/10 overflow-hidden">
+        <nav className="fixed w-full z-50 backdrop-blur-md shadow-lg border-b border-white/10">
             {/* Diagonal background for navbar */}
             <div className="absolute inset-0 bg-gradient-to-br from-virtus-yellow/95 via-virtus-yellow/95 to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-tl from-virtus-blue/95 via-virtus-blue/95 to-transparent"></div>

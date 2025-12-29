@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import StandingsWidget from '@/components/StandingsWidget';
+import CalendarWidget from '@/components/CalendarWidget';
+import SponsorsWidget from '@/components/SponsorsWidget';
 
 export async function generateStaticParams() {
     const pages = getAllPages();
@@ -42,7 +45,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/hero.png"
+                        src={page.meta.heroImage || "/images/hero.png"}
                         alt="Background"
                         fill
                         className="object-cover"
@@ -63,12 +66,131 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </div>
             </div>
 
-            {/* Content Card */}
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
-                    <article className="prose prose-lg prose-blue max-w-none prose-headings:font-bold prose-headings:text-virtus-blue prose-a:text-virtus-blue hover:prose-a:text-yellow-600 prose-img:rounded-xl prose-img:shadow-md prose-strong:text-virtus-blue">
-                        <ReactMarkdown>{page.content}</ReactMarkdown>
-                    </article>
+            {/* Content Container */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                    {/* Left Column: Content, Roster, Staff */}
+                    <div className="lg:col-span-2 space-y-12">
+                        {/* Main Content (Markdown) */}
+                        <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+                            <article className="prose prose-lg prose-blue max-w-none prose-headings:font-bold prose-headings:text-virtus-blue prose-a:text-virtus-blue hover:prose-a:text-yellow-600 prose-img:rounded-xl prose-img:shadow-md prose-strong:text-virtus-blue">
+                                <ReactMarkdown>{page.content}</ReactMarkdown>
+                            </article>
+                        </div>
+
+                        {/* Dynamic Roster Section */}
+                        {page.meta.roster && (page.meta.roster as any[]).length > 0 && (
+                            <div>
+                                <h2 className="text-3xl font-display font-bold text-virtus-blue uppercase tracking-tight mb-6 flex items-center">
+                                    <span className="w-2 h-8 bg-virtus-yellow mr-4"></span>
+                                    {page.meta.category === 'Minibasket' ? 'Miniatleti' : 'Roster'}
+                                </h2>
+                                <div className={`grid grid-cols-1 md:grid-cols-2 ${page.meta.category === 'Minibasket' ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-6`}>
+                                    {(page.meta.roster as any[]).map((player: any, index: number) => {
+                                        const playerNum = parseInt(player.number) || 0;
+                                        const isEven = playerNum % 2 === 0;
+                                        const numTextColor = isEven ? 'text-blue-600' : 'text-virtus-yellow';
+
+                                        return (
+                                            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow border border-gray-100 h-48">
+                                                <div className="flex h-full">
+                                                    <div className="w-1/2 bg-gray-50 relative h-full border-r border-gray-50 overflow-hidden">
+                                                        {player.image ? (
+                                                            <Image
+                                                                src={player.image}
+                                                                alt={player.name}
+                                                                fill
+                                                                className="object-contain p-1 group-hover:scale-110 transition-transform duration-300"
+                                                            />
+                                                        ) : (
+                                                            <div className="absolute inset-0 flex items-center justify-center text-gray-300 font-bold text-4xl opacity-50">
+                                                                #{player.number || '0'}
+                                                            </div>
+                                                        )}
+                                                        {player.number && (
+                                                            <div className={`absolute top-1 left-1 font-black text-2xl z-20 drop-shadow-md ${numTextColor}`}>
+                                                                #{player.number}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <div className="w-1/2 p-4 flex flex-col justify-between">
+                                                        <div className="flex justify-between items-start mb-1">
+                                                            <div className="min-w-0 flex-1 overflow-visible">
+                                                                <h3 className="font-bold text-base md:text-lg text-blue-600 uppercase leading-tight group-hover:text-virtus-yellow transition-colors break-words">
+                                                                    {player.name}
+                                                                </h3>
+                                                                <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-tight">{player.position}</p>
+                                                            </div>
+                                                        </div>
+                                                        {(player.height || player.year) && (
+                                                            <div className="pt-2 border-t border-gray-100 grid grid-cols-2 gap-2 text-[10px]">
+                                                                {player.height && (
+                                                                    <div>
+                                                                        <span className="text-gray-400 block uppercase text-[8px]">Altezza</span>
+                                                                        <span className="font-bold text-gray-700">{player.height}</span>
+                                                                    </div>
+                                                                )}
+                                                                {player.year && (
+                                                                    <div>
+                                                                        <span className="text-gray-400 block uppercase text-[8px]">Anno</span>
+                                                                        <span className="font-bold text-gray-700">{player.year}</span>
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Dynamic Staff Section */}
+                        {page.meta.staff && (page.meta.staff as any[]).length > 0 && (
+                            <div>
+                                <h2 className="text-3xl font-display font-bold text-virtus-blue uppercase tracking-tight mb-6 flex items-center">
+                                    <span className="w-2 h-8 bg-virtus-yellow mr-4"></span>
+                                    Staff Tecnico
+                                </h2>
+                                <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {(page.meta.staff as any[]).map((member: any, index: number) => (
+                                            <div key={index} className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                                <div className="w-12 h-12 bg-virtus-blue text-white rounded-full flex items-center justify-center font-bold text-xl">
+                                                    {member.name.charAt(0)}
+                                                </div>
+                                                <div>
+                                                    <div className="text-xs font-bold text-virtus-yellow uppercase tracking-wider">{member.role}</div>
+                                                    <div className="font-bold text-lg text-gray-800">{member.name}</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Right Column: Widgets */}
+                    <div className="space-y-12">
+                        {/* Sponsors Widget */}
+                        <SponsorsWidget />
+
+                        {/* Standings Widget */}
+                        {page.meta.standings && (page.meta.standings as any[]).length > 0 && (
+                            <StandingsWidget standings={page.meta.standings as any[]} />
+                        )}
+
+                        {/* Calendar Widget */}
+                        {page.meta.calendar && (page.meta.calendar as any[]).length > 0 && (
+                            <CalendarWidget events={page.meta.calendar as any[]} />
+                        )}
+                    </div>
+
                 </div>
             </div>
         </div>

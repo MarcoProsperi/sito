@@ -4,6 +4,10 @@
     "href": "/"
   },
   {
+    "label": "News",
+    "href": "/news"
+  },
+  {
     "label": "Società",
     "href": "/storia",
     "children": [
@@ -30,20 +34,74 @@
     ]
   },
   {
-    "label": "DR1",
-    "href": "/squadre"
-  },
-  {
-    "label": "News",
-    "href": "/news"
+    "label": "Senior",
+    "href": "/dr1",
+    "children": [
+      {
+        "label": "DR1",
+        "href": "/dr1"
+      },
+      {
+        "label": "DR3",
+        "href": "/dr3"
+      },
+      {
+        "label": "Amatori",
+        "href": "/amatoriale"
+      }
+    ]
   },
   {
     "label": "Giovanili",
-    "href": "/giovanili"
+    "href": "/giovanili",
+    "children": [
+      {
+        "label": "Under 17",
+        "href": "/under-17"
+      },
+      {
+        "label": "Under 15",
+        "href": "/under-15"
+      },
+      {
+        "label": "Under 14",
+        "href": "/under-14"
+      },
+      {
+        "label": "Under 13",
+        "href": "/under-13"
+      }
+    ]
   },
   {
     "label": "Minibasket",
-    "href": "/minibasket"
+    "href": "/minibasket",
+    "children": [
+      {
+        "label": "Pulcini",
+        "href": "/pulcini"
+      },
+      {
+        "label": "Scoiattoli Small",
+        "href": "/scoiattoli-small"
+      },
+      {
+        "label": "Scoiattoli Big",
+        "href": "/scoiattoli-big"
+      },
+      {
+        "label": "Aquilotti Small",
+        "href": "/aquilotti-small"
+      },
+      {
+        "label": "Aquilotti Big",
+        "href": "/aquilotti-big"
+      },
+      {
+        "label": "Esordienti",
+        "href": "/esordienti"
+      }
+    ]
   },
   {
     "label": "Iscrizioni",

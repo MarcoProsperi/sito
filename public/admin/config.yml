@@ -1,0 +1,71 @@
+backend:
+  name: test-repo
+  # name: git-gateway
+  # branch: main
+  # local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pagine"
+    folder: "content/pages"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Descrizione", name: "description", widget: "string"}
+      - {label: "Contenuto", name: "body", widget: "markdown"}
+      - {label: "Immagine Hero", name: "heroImage", widget: "image", required: false}
+      - label: "Roster (Solo per Squadre)"
+        name: "roster"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Numero", name: "number", widget: "string"}
+          - {label: "Nome", name: "name", widget: "string"}
+          - {label: "Ruolo", name: "position", widget: "string"}
+          - {label: "Altezza", name: "height", widget: "string", required: false}
+          - {label: "Anno", name: "year", widget: "string", required: false}
+          - {label: "Foto", name: "image", widget: "image", required: false}
+      - label: "Staff (Solo per Squadre)"
+        name: "staff"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Ruolo", name: "role", widget: "string"}
+          - {label: "Nome", name: "name", widget: "string"}
+      - label: "Classifica (Solo per Squadre)"
+        name: "standings"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Posizione", name: "rank", widget: "number"}
+          - {label: "Squadra", name: "team", widget: "string"}
+          - {label: "Punti", name: "points", widget: "number"}
+          - {label: "Giocate", name: "played", widget: "number", required: false}
+          - {label: "Vinte", name: "won", widget: "number", required: false}
+          - {label: "Perse", name: "lost", widget: "number", required: false}
+      - label: "Calendario / Prossime Gare"
+        name: "calendar"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Titolo / Partita", name: "title", widget: "string"}
+          - {label: "Data (es. 14 Dic)", name: "date", widget: "string"}
+          - {label: "Orario", name: "time", widget: "string", required: false}
+          - {label: "Luogo", name: "location", widget: "string", required: false}
+          - {label: "Categoria", name: "category", widget: "string", required: false}
+
+  - name: "news"
+    label: "News / Articoli"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Data Pubblicazione", name: "date", widget: "datetime"}
+      - {label: "Immagine di Copertina", name: "image", widget: "image"}
+      - {label: "Breve Descrizione", name: "description", widget: "text"}
+      - {label: "Contenuto Articolo", name: "body", widget: "markdown"}

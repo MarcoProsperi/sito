@@ -11,7 +11,7 @@ const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
 
 export const metadata: Metadata = {
   title: "Virtus Velletri Basket",
-  description: "Sito ufficiale della Virtus Velletri Basket. Storia, Squadre e Passione.",
+  description: "Sito ufficiale della s.s.dil. Virtus Velletri. Storia, Squadre e Passione.",
 };
 
 export default function RootLayout({
