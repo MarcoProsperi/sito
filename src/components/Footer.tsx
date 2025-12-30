@@ -10,7 +10,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-2xl font-bold mb-4 text-virtus-yellow tracking-tight">VIRTUS VELLETRI</h3>
                         <p className="text-white/80 mb-6 leading-relaxed">
-                            s.s.dil. Virtus Velletri.<br />
+                            S.S.DIL. Virtus Velletri.<br />
                             Promuoviamo il basket e i suoi valori dal 1996.
                         </p>
                         <div className="flex space-x-4">
