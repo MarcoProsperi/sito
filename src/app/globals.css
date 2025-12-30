@@ -28,3 +28,39 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes sponsorRotate {
+  0%, 16.66% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  16.67%, 100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.animate-sponsor-rotate > div:nth-child(1) {
+  animation: sponsorRotate 60s infinite;
+  animation-delay: 0s;
+}
+.animate-sponsor-rotate > div:nth-child(2) {
+  animation: sponsorRotate 60s infinite;
+  animation-delay: 10s;
+}
+.animate-sponsor-rotate > div:nth-child(3) {
+  animation: sponsorRotate 60s infinite;
+  animation-delay: 20s;
+}
+.animate-sponsor-rotate > div:nth-child(4) {
+  animation: sponsorRotate 60s infinite;
+  animation-delay: 30s;
+}
+.animate-sponsor-rotate > div:nth-child(5) {
+  animation: sponsorRotate 60s infinite;
+  animation-delay: 40s;
+}
+.animate-sponsor-rotate > div:nth-child(6) {
+  animation: sponsorRotate 60s infinite;
+  animation-delay: 50s;
+}

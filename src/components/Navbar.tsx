@@ -108,10 +108,11 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-virtus-blue border-t border-white/10 overflow-hidden"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        // Absolute positioning to overlay content
+                        className="md:hidden absolute top-20 left-0 w-full bg-virtus-blue border-t border-white/10 shadow-2xl z-40 max-h-[80vh] overflow-y-auto"
                     >
                         <div className="px-4 pt-2 pb-6 space-y-2">
                             {menu.map((item) => (

@@ -58,6 +58,43 @@ collections:
           - {label: "Luogo", name: "location", widget: "string", required: false}
           - {label: "Categoria", name: "category", widget: "string", required: false}
 
+  - name: "standings"
+    label: "Classifiche"
+    folder: "content/standings"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titolo Classifica (es. Under 17 Silver)", name: "title", widget: "string"}
+      - {label: "Slug Squadra (es. under-17)", name: "team_slug", widget: "string", hint: "Deve corrispondere allo slug della pagina della squadra per apparire lì"}
+      - label: "Righe Classifica"
+        name: "table"
+        widget: "list"
+        fields:
+          - {label: "Posizione", name: "rank", widget: "number"}
+          - {label: "Squadra", name: "team", widget: "string"}
+          - {label: "Punti", name: "points", widget: "number"}
+          - {label: "Giocate", name: "played", widget: "number", required: false}
+          - {label: "Vinte", name: "won", widget: "number", required: false}
+          - {label: "Perse", name: "lost", widget: "number", required: false}
+
+  - name: "matches"
+    label: "Calendari / Partite"
+    folder: "content/matches"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titolo Calendario (es. Partite U17)", name: "title", widget: "string"}
+      - {label: "Slug Squadra (es. under-17)", name: "team_slug", widget: "string", hint: "Deve corrispondere allo slug della pagina della squadra per apparire lì"}
+      - label: "Lista Partite"
+        name: "events"
+        widget: "list"
+        fields:
+          - {label: "Titolo (es. Virtus vs Latina)", name: "title", widget: "string"}
+          - {label: "Data (es. 14 Gen o 2024-01-14)", name: "date", widget: "string"}
+          - {label: "Orario", name: "time", widget: "string", required: false}
+          - {label: "Luogo", name: "location", widget: "string", required: false}
+          - {label: "Categoria (es. U17)", name: "category", widget: "string", required: false}
+
   - name: "news"
     label: "News / Articoli"
     folder: "content/news"

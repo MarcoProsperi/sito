@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Trophy, Users, Calendar, Newspaper } from "lucide-react";
+import { ArrowRight, Trophy, Users, Calendar, Newspaper, Image as ImageIcon } from "lucide-react";
 
 const items = [
     {
@@ -26,11 +26,11 @@ const items = [
         textColor: "text-virtus-blue"
     },
     {
-        title: "MINIBASKET",
-        subtitle: "IL FUTURO",
-        description: "Corsi per bambini dai 5 agli 11 anni.",
-        href: "/minibasket",
-        icon: Trophy,
+        title: "GALLERIA",
+        subtitle: "FOTO E VIDEO",
+        description: "I momenti più belli della stagione.",
+        href: "/galleria",
+        icon: ImageIcon,
         colSpan: "col-span-1",
         bg: "bg-virtus-yellow",
         textColor: "text-virtus-blue"

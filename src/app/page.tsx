@@ -1,5 +1,3 @@
-"use client";
-
 import BentoGrid from "@/components/BentoGrid";
 import InstagramGrid from "@/components/InstagramGrid";
 import NewsTicker from "@/components/NewsTicker";
@@ -8,8 +6,17 @@ import Image from "next/image";
 import CalendarWidget from "@/components/CalendarWidget";
 import StandingsWidget from "@/components/StandingsWidget";
 import SponsorsWidget from "@/components/SponsorsWidget";
+import { getAllStandings, getAllMatches } from "@/lib/content";
 
 export default function Home() {
+  const allStandings = getAllStandings();
+
+  // Sort all matches by date
+  const allMatches = getAllMatches().sort((a, b) => {
+    // Use full date comparison if available, simplistic here for format "YYYY-MM-DD"
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  });
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Compact Hero */}
@@ -129,55 +136,16 @@ export default function Home() {
             </section>
 
             {/* Calendar Widget */}
-            <CalendarWidget />
+            <CalendarWidget events={allMatches} />
 
             {/* Standings Widget */}
-            <StandingsWidget />
+            <StandingsWidget groups={allStandings} />
 
           </div>
         </div>
       </div>
 
-      {/* CSS for animations */}
-      <style jsx>{`
-        @keyframes sponsorRotate {
-          0%, 16.66% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          16.67%, 100% {
-            opacity: 0;
-            transform: translateY(-100%);
-          }
-        }
-        
-        .animate-sponsor-rotate > div:nth-child(1) {
-          animation: sponsorRotate 60s infinite;
-          animation-delay: 0s;
-        }
-        .animate-sponsor-rotate > div:nth-child(2) {
-          animation: sponsorRotate 60s infinite;
-          animation-delay: 10s;
-        }
-        .animate-sponsor-rotate > div:nth-child(3) {
-          animation: sponsorRotate 60s infinite;
-          animation-delay: 20s;
-        }
-        .animate-sponsor-rotate > div:nth-child(4) {
-          animation: sponsorRotate 60s infinite;
-          animation-delay: 30s;
-        }
-        .animate-sponsor-rotate > div:nth-child(5) {
-          animation: sponsorRotate 60s infinite;
-          animation-delay: 40s;
-        }
-        .animate-sponsor-rotate > div:nth-child(6) {
-          animation: sponsorRotate 60s infinite;
-          animation-delay: 50s;
-        }
 
-
-      `}</style>
     </div>
   );
 }

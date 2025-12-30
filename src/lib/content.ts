@@ -56,3 +56,49 @@ export function getGalleryImages() {
     return files.filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
         .map(file => `/gallery/${file}`);
 }
+
+// ----------------------------------------------------------------------------
+// NEW MIGRATED METHODS FOR STANDINGS AND MATCHES
+// ----------------------------------------------------------------------------
+
+export function getAllStandings() {
+    const dir = path.join(contentDirectory, 'standings');
+    if (!fs.existsSync(dir)) return [];
+
+    const files = fs.readdirSync(dir);
+    return files.map((fileName) => {
+        // Prevent reading non-md files
+        if (!fileName.endsWith('.md')) return null;
+
+        const fullPath = path.join(dir, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const { data } = matter(fileContents);
+        return {
+            title: data.title,
+            categoryId: data.team_slug, // Keep existing property name for compatibility or mapping
+            team_slug: data.team_slug,
+            data: data.table || [] // Map 'table' from YAML to 'data' prop expected by widget
+        };
+    }).filter((item): item is NonNullable<typeof item> => item !== null);
+}
+
+export function getAllMatches() {
+    const dir = path.join(contentDirectory, 'matches');
+    if (!fs.existsSync(dir)) return [];
+
+    const files = fs.readdirSync(dir);
+    return files.flatMap((fileName) => {
+        // Prevent reading non-md files
+        if (!fileName.endsWith('.md')) return [];
+
+        const fullPath = path.join(dir, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const { data } = matter(fileContents);
+
+        // Return individual events, but enrich them with group info if needed
+        return (data.events || []).map((event: any) => ({
+            ...event,
+            teamId: data.team_slug // Inject team_slug into each event
+        }));
+    });
+}

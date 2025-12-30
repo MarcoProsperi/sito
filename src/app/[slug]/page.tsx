@@ -6,6 +6,7 @@ import Image from 'next/image';
 import StandingsWidget from '@/components/StandingsWidget';
 import CalendarWidget from '@/components/CalendarWidget';
 import SponsorsWidget from '@/components/SponsorsWidget';
+import { getAllStandings, getAllMatches } from '@/lib/content';
 
 export async function generateStaticParams() {
     const pages = getAllPages();
@@ -181,14 +182,39 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         <SponsorsWidget />
 
                         {/* Standings Widget */}
-                        {page.meta.standings && (page.meta.standings as any[]).length > 0 && (
-                            <StandingsWidget standings={page.meta.standings as any[]} />
-                        )}
+                        {(() => {
+                            // Filter standings for this specific page
+                            const allStandings = getAllStandings();
+                            const pageStandings = allStandings.filter((s: any) =>
+                                s.team_slug === slug ||
+                                (s.team_slug && slug.includes(s.team_slug)) ||
+                                (s.team_slug && s.team_slug.includes(slug))
+                            );
+
+                            if (pageStandings.length > 0) {
+                                return <StandingsWidget groups={pageStandings as any} />;
+                            } else if (page.meta.standings && (page.meta.standings as any[]).length > 0) {
+                                return <StandingsWidget standings={page.meta.standings as any[]} />;
+                            }
+                            return null;
+                        })()}
 
                         {/* Calendar Widget */}
-                        {page.meta.calendar && (page.meta.calendar as any[]).length > 0 && (
-                            <CalendarWidget events={page.meta.calendar as any[]} />
-                        )}
+                        {(() => {
+                            const allMatches = getAllMatches();
+                            const pageEvents = allMatches.filter((e: any) =>
+                                e.teamId === slug ||
+                                (e.teamId && slug.includes(e.teamId)) ||
+                                (e.teamId && e.teamId.includes(slug))
+                            ).sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+                            if (pageEvents.length > 0) {
+                                return <CalendarWidget events={pageEvents} />;
+                            } else if (page.meta.calendar && (page.meta.calendar as any[]).length > 0) {
+                                return <CalendarWidget events={page.meta.calendar as any[]} />;
+                            }
+                            return null;
+                        })()}
                     </div>
 
                 </div>
