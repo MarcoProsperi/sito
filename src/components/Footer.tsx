@@ -43,14 +43,21 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center">
                                 <Mail size={20} className="mr-3 text-virtus-yellow flex-shrink-0" />
-                                <a href="mailto:info@virtusvelletri.it" className="hover:text-white transition-colors">info@virtusvelletri.it</a>
+                                <a href="mailto:segreteria.virtusvelletri@gmail.com" className="hover:text-white transition-colors">segreteria.virtusvelletri@gmail.com</a>
+                            </li>
+                            <li className="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3 text-virtus-yellow flex-shrink-0"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+                                <span>
+                                    <span className="block text-sm opacity-70">What's App</span>
+                                    <a href="https://wa.me/393887533635" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">388 753 3635</a>
+                                </span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm space-y-2">
-                    <p>&copy; {new Date().getFullYear()} s.s.dil. Virtus Velletri. Tutti i diritti riservati.</p>
+                    <p>&copy; {new Date().getFullYear()} S.S.DIL. Virtus Velletri. Tutti i diritti riservati.</p>
                     <p className="text-xs opacity-75">Realizzazione sito: <span className="font-semibold text-virtus-yellow">batlh studios</span></p>
                 </div>
             </div>

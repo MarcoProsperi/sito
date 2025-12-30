@@ -1,28 +1,58 @@
 ---
 title: "Esordienti"
-description: "Categoria Esordienti - Stagione 2025/26"
+description: "Categoria Esordienti - Stagione 2025/2026"
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Nome Cognome"
+    name: "Da Definire"
 roster:
-  - number: "00"
-    name: "Atleta"
+  - number: "0"
+    name: "Giulio Claudio"
     position: "Esordienti"
-    height: "-"
-    year: "2013"
-standings:
-  - rank: 1
-    team: "Virtus Velletri"
-    points: 0
-    played: 0
-    won: 0
-    lost: 0
-calendar:
-  - title: "Gara 1"
-    date: "TBD"
-    time: "18:00"
-    location: "Velletri"
+    year: "2014"
+    image: "/images/imm_1.png"
+  - number: "3"
+    name: "Valerio"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_2.png"
+  - number: "12"
+    name: "Gianmarco"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_3.png"
+  - number: "18"
+    name: "Corrado"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_4.png"
+  - number: "42"
+    name: "Vittorio"
+    position: "Esordienti"
+    year: "2015"
+    image: "/images/imm_5.png"
+  - number: "53"
+    name: "Leonardo Jose"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_6.png"
+  - number: "83"
+    name: "Carmen"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_7.png"
+  - number: "90"
+    name: "Francesco"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_8.png"
+  - number: "00"
+    name: "Andrea"
+    position: "Esordienti"
+    year: "2014"
+    image: "/images/imm_9.png"
+standings: []
+calendar: []
 category: "Minibasket"
 ---
 
@@ -30,4 +60,3 @@ category: "Minibasket"
 
 Il passaggio tra Minibasket e Basket.
 Regole vere e campo grande.
-*Dati in fase di aggiornamento.*

@@ -76,7 +76,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     <div className="lg:col-span-2 space-y-12">
                         {/* Main Content (Markdown) */}
                         <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
-                            <article className="prose prose-lg prose-blue max-w-none prose-headings:font-bold prose-headings:text-virtus-blue prose-a:text-virtus-blue hover:prose-a:text-yellow-600 prose-img:rounded-xl prose-img:shadow-md prose-strong:text-virtus-blue">
+                            <article className={`prose prose-lg prose-blue max-w-none prose-headings:font-bold prose-headings:text-virtus-blue prose-a:text-virtus-blue prose-img:rounded-xl prose-img:shadow-md prose-strong:text-virtus-blue ${slug === 'contatti' ? 'prose-hr:border-virtus-yellow prose-hr:border-2 prose-hr:mt-2 prose-hr:mb-8 !prose-a:no-underline' : 'hover:prose-a:text-yellow-600'}`}>
                                 <ReactMarkdown>{page.content}</ReactMarkdown>
                             </article>
                         </div>

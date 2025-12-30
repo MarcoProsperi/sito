@@ -1,33 +1,92 @@
 ---
 title: "Scoiattoli Big"
-description: "Minibasket Scoiattoli Big - Stagione 2025/26"
+description: "Minibasket Scoiattoli Big - Stagione 2025/2026"
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Nome Cognome"
+    name: "Da Definire"
 roster:
+  - number: "6"
+    name: "Giovanni"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_1.png"
+  - number: "10"
+    name: "Edoardo"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_2.png"
+  - number: "11"
+    name: "Manuel"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_3.png"
+  - number: "18"
+    name: "Valerio"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_4.png"
+  - number: "21"
+    name: "Edoardo"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_5.png"
+  - number: "22"
+    name: "Flavio"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_6.png"
+  - number: "23"
+    name: "Giorgio"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_7.png"
+  - number: "27"
+    name: "Aida Maria"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_8.png"
+  - number: "34"
+    name: "Francesco"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_9.png"
+  - number: "41"
+    name: "Gabriele"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_10.png"
+  - number: "63"
+    name: "Mattia"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_1.png"
+  - number: "86"
+    name: "Elena"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_2.png"
   - number: "00"
-    name: "Mini Atleta"
-    position: "Scoiattoli"
-    height: "-"
-    year: "2016"
-standings:
-  - rank: 1
-    team: "Virtus Big"
-    points: 0
-    played: 0
-    won: 0
-    lost: 0
-calendar:
-  - title: "Partita 1"
-    date: "TBD"
-    time: "11:00"
-    location: "Velletri"
+    name: "Emanuele"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_3.png"
+  - number: "00"
+    name: "Giacomo"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_4.png"
+  - number: "00"
+    name: "Davide"
+    position: "Scoiattoli Big"
+    year: "2017"
+    image: "/images/imm_5.png"
+standings: []
+calendar: []
 category: "Minibasket"
 ---
 
 # Scoiattoli Big
 
-Gruppo Scoiattoli (i più grandi).
-Primi fondamentali e mini-partite.
-*Dati in fase di aggiornamento.*
+Gruppo Scoiattoli 2017.
+Si cresce e si gioca!

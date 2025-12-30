@@ -66,7 +66,7 @@ export default function BentoGrid({ compact = false }: { compact?: boolean }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className={`${item.colSpan} relative group overflow-hidden rounded-none shadow-xl hover:shadow-2xl transition-all duration-500`}
+                        className={`${item.colSpan} relative group overflow-hidden rounded-none shadow-[0_10px_30px_-10px_rgba(31,50,90,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(31,50,90,0.4)] transition-all duration-500`}
                     >
                         <Link href={item.href} className={`block h-full w-full p-8 flex flex-col justify-end ${item.bg} ${item.textColor || 'text-white'}`}>
                             <div className="absolute top-8 right-8 opacity-20 group-hover:opacity-40 transition-opacity transform group-hover:scale-110 duration-500">
