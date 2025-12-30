@@ -29,7 +29,7 @@ const items = [
         title: "GALLERIA",
         subtitle: "FOTO E VIDEO",
         description: "I momenti più belli della stagione.",
-        href: "/galleria",
+        href: "/gallery",
         icon: ImageIcon,
         colSpan: "col-span-1",
         bg: "bg-virtus-yellow",

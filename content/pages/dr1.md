@@ -1,6 +1,6 @@
 ---
 title: "DR1"
-description: "Divisione Regionale 1 - Stagione 2024/25"
+description: "Divisione Regionale 1 - Stagione 2025/2026"
 heroImage: "/images/hero.png"
 staff:
   - role: "Head Coach"

@@ -56,20 +56,20 @@
     "href": "/giovanili",
     "children": [
       {
-        "label": "Under 17",
-        "href": "/under-17"
-      },
-      {
-        "label": "Under 15",
-        "href": "/under-15"
+        "label": "Under 13",
+        "href": "/under-13"
       },
       {
         "label": "Under 14",
         "href": "/under-14"
       },
       {
-        "label": "Under 13",
-        "href": "/under-13"
+        "label": "Under 15",
+        "href": "/under-15"
+      },
+      {
+        "label": "Under 17",
+        "href": "/under-17"
       }
     ]
   },
