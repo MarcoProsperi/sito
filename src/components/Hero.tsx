@@ -35,8 +35,8 @@ export default function Hero() {
                     <h1 className="text-7xl md:text-9xl font-display font-bold text-white uppercase tracking-tighter leading-[0.9] mb-8 drop-shadow-2xl">
                         Virtus <span className="text-transparent bg-clip-text bg-gradient-to-r from-virtus-yellow to-yellow-600">Velletri</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-200 font-light tracking-wide mb-12 max-w-2xl mx-auto">
-                        La passione per il basket nel cuore dei Castelli Romani.
+                    <p className="text-xl md:text-2xl text-white font-light tracking-wide mb-12 max-w-2xl mx-auto">
+                        Since 1996
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

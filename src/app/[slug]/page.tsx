@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     {page.meta.description && (
                         <p className={`text-base md:text-lg mx-auto font-medium ${page.meta.category === 'Minibasket' || slug === 'news'
                             ? 'text-white text-justify leading-relaxed italic max-w-3xl'
-                            : 'text-virtus-yellow/90 max-w-2xl text-center'
+                            : 'text-white max-w-2xl text-center'
                             }`}>
                             {page.meta.description}
                         </p>
