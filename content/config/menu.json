@@ -28,8 +28,8 @@
         "href": "/contatti"
       },
       {
-        "label": "Collaborazioni",
-        "href": "/collaborazioni"
+        "label": "Contributi",
+        "href": "/contributi"
       }
     ]
   },
@@ -116,14 +116,10 @@
         "href": "/iscrizioni"
       },
       {
-        "label": "Contributi",
-        "href": "/contributi"
+        "label": "Centro Estivo",
+        "href": "/centro-estivo"
       }
     ]
-  },
-  {
-    "label": "Centro Estivo",
-    "href": "/centro-estivo"
   },
   {
     "label": "Galleria",

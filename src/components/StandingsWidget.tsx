@@ -44,6 +44,28 @@ export default function StandingsWidget({ standings, title = "Classifica", group
     // Sort by points desc, then rank asc
     const sortedStandings = [...currentGroup.data].sort((a, b) => b.points - a.points || a.rank - b.rank);
 
+    // Limit to 5 teams, centered on Virtus Velletri if possible
+    let displayStandings = sortedStandings;
+    if (sortedStandings.length > 5) {
+        const virtusIndex = sortedStandings.findIndex(row =>
+            row.team.toLowerCase().includes("virtus velletri")
+        );
+
+        if (virtusIndex !== -1) {
+            let start = Math.max(0, virtusIndex - 2);
+            let end = Math.min(sortedStandings.length, start + 5);
+
+            // Adjust start if we hit the end
+            if (end - start < 5) {
+                start = Math.max(0, end - 5);
+            }
+
+            displayStandings = sortedStandings.slice(start, end);
+        } else {
+            displayStandings = sortedStandings.slice(0, 5);
+        }
+    }
+
     return (
         <section className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 mb-8 min-h-[400px]">
             {/* Header */}
@@ -89,7 +111,7 @@ export default function StandingsWidget({ standings, title = "Classifica", group
                                 </tr>
                             </thead>
                             <tbody>
-                                {sortedStandings.map((row) => { // Key logic moved to ensure uniqueness if needed, but index is fine here within the isolated table
+                                {displayStandings.map((row) => { // Key logic moved to ensure uniqueness if needed, but index is fine here within the isolated table
                                     const isVirtus = row.team.toLowerCase().includes("virtus");
                                     return (
                                         <tr

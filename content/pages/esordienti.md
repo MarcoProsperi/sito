@@ -1,6 +1,6 @@
 ---
 title: "Esordienti"
-description: "Categoria Esordienti - Stagione 2025/2026"
+description: "Il ponte verso il basket vero e proprio: regolamento più vicino a quello dei grandi, più responsabilità in campo, ma sempre con spirito di gruppo e voglia di migliorare."
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
@@ -58,5 +58,4 @@ category: "Minibasket"
 
 # Esordienti
 
-Il passaggio tra Minibasket e Basket.
-Regole vere e campo grande.
+Il ponte verso il basket vero e proprio: regolamento più vicino a quello dei grandi, più responsabilità in campo, ma sempre con spirito di gruppo e voglia di migliorare.

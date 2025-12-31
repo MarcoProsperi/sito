@@ -1,6 +1,6 @@
 ---
 title: "Pulcini"
-description: "Minibasket Pulcini - Stagione 2025/26"
+description: "I più piccoli del minibasket: scoprono il campo, il pallone e soprattutto il divertimento. Qui si corre, si gioca, si ride e si impara a muoversi… più che a fare canestro!"
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
@@ -167,6 +167,4 @@ category: "Minibasket"
 
 # Pulcini
 
-Il primo passo nel mondo del basket.
-Ecco i nostri piccoli campioni!
-*Dati in fase di aggiornamento.*
+I più piccoli del minibasket: scoprono il campo, il pallone e soprattutto il divertimento. Qui si corre, si gioca, si ride e si impara a muoversi… più che a fare canestro!

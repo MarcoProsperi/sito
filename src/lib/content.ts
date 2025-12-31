@@ -82,7 +82,28 @@ export function getAllStandings() {
     }).filter((item): item is NonNullable<typeof item> => item !== null);
 }
 
-export function getAllMatches() {
+export interface MatchEvent {
+    title: string;
+    date: string;
+    time?: string;
+    location?: string;
+    category?: string;
+    teamId?: string;
+    slug: string;
+    score?: string;
+}
+
+function slugify(text: string) {
+    return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]+/g, '')
+        .replace(/--+/g, '-');
+}
+
+export function getAllMatches(): MatchEvent[] {
     const dir = path.join(contentDirectory, 'matches');
     if (!fs.existsSync(dir)) return [];
 
@@ -96,9 +117,18 @@ export function getAllMatches() {
         const { data } = matter(fileContents);
 
         // Return individual events, but enrich them with group info if needed
-        return (data.events || []).map((event: any) => ({
-            ...event,
-            teamId: data.team_slug // Inject team_slug into each event
-        }));
+        return (data.events || []).map((event: any) => {
+            const slug = slugify(`${event.title}-${event.date}`);
+            return {
+                ...event,
+                slug,
+                teamId: data.team_slug // Inject team_slug into each event
+            };
+        });
     });
+}
+
+export function getMatchBySlug(slug: string): MatchEvent | null {
+    const allMatches = getAllMatches();
+    return allMatches.find(m => m.slug === slug) || null;
 }

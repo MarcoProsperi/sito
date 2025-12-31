@@ -60,7 +60,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         {page.meta.title}
                     </h1>
                     {page.meta.description && (
-                        <p className="text-base md:text-lg text-virtus-yellow/90 max-w-2xl mx-auto font-medium">
+                        <p className={`text-base md:text-lg mx-auto font-medium ${page.meta.category === 'Minibasket'
+                            ? 'text-white text-justify leading-relaxed italic max-w-3xl'
+                            : 'text-virtus-yellow/90 max-w-2xl text-center'
+                            }`}>
                             {page.meta.description}
                         </p>
                     )}
@@ -92,7 +95,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                                     {(page.meta.roster as any[]).map((player: any, index: number) => {
                                         const playerNum = parseInt(player.number) || 0;
                                         const isEven = playerNum % 2 === 0;
-                                        const numTextColor = isEven ? 'text-blue-600' : 'text-virtus-yellow';
+                                        const numTextColor = 'text-virtus-blue';
 
                                         return (
                                             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow border border-gray-100 h-48">
@@ -119,7 +122,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                                                     <div className="w-1/2 p-4 flex flex-col justify-between">
                                                         <div className="flex justify-between items-start mb-1">
                                                             <div className="min-w-0 flex-1 overflow-visible">
-                                                                <h3 className="font-bold text-base md:text-lg text-blue-600 uppercase leading-tight group-hover:text-virtus-yellow transition-colors break-words">
+                                                                <h3 className="font-bold text-base md:text-lg text-virtus-blue uppercase leading-tight group-hover:text-virtus-yellow transition-colors break-words">
                                                                     {player.name}
                                                                 </h3>
                                                                 <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-tight">{player.position}</p>
@@ -183,6 +186,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
                         {/* Standings Widget */}
                         {(() => {
+                            if (page.meta.category === 'Minibasket') return null;
+
                             // Filter standings for this specific page
                             const allStandings = getAllStandings();
                             const pageStandings = allStandings.filter((s: any) =>
@@ -201,17 +206,30 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
                         {/* Calendar Widget */}
                         {(() => {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
                             const allMatches = getAllMatches();
-                            const pageEvents = allMatches.filter((e: any) =>
-                                e.teamId === slug ||
-                                (e.teamId && slug.includes(e.teamId)) ||
-                                (e.teamId && e.teamId.includes(slug))
-                            ).sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+                            const pageEvents = allMatches
+                                .filter((e: any) =>
+                                    e.teamId === slug ||
+                                    (e.teamId && slug.includes(e.teamId)) ||
+                                    (e.teamId && e.teamId.includes(slug))
+                                )
+                                .filter((e: any) => new Date(e.date) >= today)
+                                .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
+                                .slice(0, 5);
 
                             if (pageEvents.length > 0) {
-                                return <CalendarWidget events={pageEvents} />;
+                                return <CalendarWidget events={pageEvents} teamSlug={slug} />;
                             } else if (page.meta.calendar && (page.meta.calendar as any[]).length > 0) {
-                                return <CalendarWidget events={page.meta.calendar as any[]} />;
+                                const calendarItems = (page.meta.calendar as any[])
+                                    .filter((e: any) => new Date(e.date) >= today)
+                                    .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
+                                    .slice(0, 5);
+                                return <CalendarWidget events={calendarItems} teamSlug={slug} />;
+                            } else if (page.meta.category === 'Minibasket') {
+                                return <CalendarWidget events={[]} teamSlug={slug} />;
                             }
                             return null;
                         })()}

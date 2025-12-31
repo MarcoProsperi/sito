@@ -1,6 +1,6 @@
 ---
 title: "Scoiattoli Small"
-description: "Minibasket Scoiattoli Small - Stagione 2025/2026"
+description: "I bambini cominciano a diventare “piccoli giocatori”: iniziano a capire meglio il gioco, a palleggiare, passare e tirare… ma sempre con tanta fantasia e allegria!"
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
@@ -118,5 +118,4 @@ category: "Minibasket"
 
 # Scoiattoli Small
 
-Gruppo Scoiattoli 2018/2019.
-Imparare giocando!
+I bambini cominciano a diventare “piccoli giocatori”: iniziano a capire meglio il gioco, a palleggiare, passare e tirare… ma sempre con tanta fantasia e allegria!

@@ -2,11 +2,11 @@
 title: Partite DR3
 team_slug: dr3
 events:
-  - { title: "Virtus Velletri vs Virtus Bk Castelgandolfo", date: "2025-11-16", time: "18:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR3" }
-  - { title: "Virtus Bk Albano-Pavona vs Virtus Velletri", date: "2025-11-23", time: "18:30", location: "Sc. 'D. Alighieri' Via Leonardo Da Vinci - Pavona 00040 Castel Gandolfo (Rm)", category: "DR3" }
+  - { title: "Virtus Velletri vs Virtus Bk Castelgandolfo", date: "2025-11-16", time: "18:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR3", score: "39 - 63" }
+  - { title: "Virtus Bk Albano-Pavona vs Virtus Velletri", date: "2025-11-23", time: "18:30", location: "Sc. 'D. Alighieri' Via Leonardo Da Vinci - Pavona 00040 Castel Gandolfo (Rm)", category: "DR3", score: "49 - 62" }
   - { title: "Samurai Basket Aprilia vs Virtus Velletri", date: "2025-11-30", time: "19:30", location: "Palestra Istituto Rosselli Via Carroceto Snc 04011 Aprilia (Lt)", category: "DR3" }
-  - { title: "Virtus Velletri vs Albano Basket Club", date: "2025-12-07", time: "18:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR3" }
-  - { title: "Virtus Settanta Pomezia vs Virtus Velletri", date: "2025-12-14", time: "10:00", location: "Pala Margherita Hack Via Singen Snc 00071 Pomezia (Rm)", category: "DR3" }
+  - { title: "Virtus Velletri vs Albano Basket Club", date: "2025-12-07", time: "18:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR3", score: "76 - 81" }
+  - { title: "Virtus Settanta Pomezia vs Virtus Velletri", date: "2025-12-14", time: "10:00", location: "Pala Margherita Hack Via Singen Snc 00071 Pomezia (Rm)", category: "DR3", score: "80 - 60" }
   - { title: "Virtus Velletri vs Velester", date: "2026-01-23", time: "20:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR3" }
   - { title: "Academy Olimpia vs Virtus Velletri", date: "2026-01-11", time: "20:30", location: "Tensostruttura Via Della Pace Snc. 00038 Valmontone (Rm)", category: "DR3" }
   - { title: "Virtus Velletri vs Jungle Team Palestrina", date: "2026-01-18", time: "18:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR3" }

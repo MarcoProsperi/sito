@@ -2,18 +2,18 @@
 title: Partite DR1
 team_slug: dr1
 events:
-  - { title: "Virtus Velletri vs Algarve Roma Torrino", date: "2025-10-04", time: "17:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }
-  - { title: "Smit Roma Centro vs Virtus Velletri", date: "2025-10-11", time: "18:00", location: "Impianto Tellene Via Claudio Villa 00128 Roma (Rm)", category: "DR1" }
-  - { title: "Albano Basket Club vs Virtus Velletri", date: "2025-10-18", time: "19:15", location: "Palestra Comunale Via Vascarelle 110 00041 Albano Laziale (Rm)", category: "DR1" }
-  - { title: "Virtus Velletri vs Olimpia Roma S.Venanzio", date: "2025-10-25", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }
-  - { title: "Apdb Roma vs Virtus Velletri", date: "2025-11-02", time: "20:30", location: "C.S. Quartaccio Via T. Mann 18 00166 Roma (Rm)", category: "DR1" }
-  - { title: "Virtus Velletri vs Atletico San Lorenzo", date: "2025-11-08", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }
-  - { title: "Club Marino Lions vs Virtus Velletri", date: "2025-11-16", time: "18:00", location: "Palestra Comunale Via Appia Nuova Km 18,800 00040 Marino (Rm)", category: "DR1" }
-  - { title: "Virtus Velletri vs Roma Eur", date: "2025-11-22", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }
-  - { title: "Stelle Marine Basket vs Virtus Velletri", date: "2025-11-30", time: "18:30", location: "Palaassobalneari Piazza Regina Pacis 13 00122 Roma (Rm)", category: "DR1" }
+  - { title: "Virtus Velletri vs Algarve Roma Torrino", date: "2025-10-04", time: "17:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1", score: "58 - 72" }
+  - { title: "Smit Roma Centro vs Virtus Velletri", date: "2025-10-11", time: "18:00", location: "Impianto Tellene Via Claudio Villa 00128 Roma (Rm)", category: "DR1", score: "79 - 49" }
+  - { title: "Albano Basket Club vs Virtus Velletri", date: "2025-10-18", time: "19:15", location: "Palestra Comunale Via Vascarelle 110 00041 Albano Laziale (Rm)", category: "DR1", score: "101 - 82" }
+  - { title: "Virtus Velletri vs Olimpia Roma S.Venanzio", date: "2025-10-25", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1", score: "72 - 71" }
+  - { title: "Apdb Roma vs Virtus Velletri", date: "2025-11-02", time: "20:30", location: "C.S. Quartaccio Via T. Mann 18 00166 Roma (Rm)", category: "DR1", score: "68 - 62" }
+  - { title: "Virtus Velletri vs Atletico San Lorenzo", date: "2025-11-08", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1", score: "76 - 63" }
+  - { title: "Club Marino Lions vs Virtus Velletri", date: "2025-11-16", time: "18:00", location: "Palestra Comunale Via Appia Nuova Km 18,800 00040 Marino (Rm)", category: "DR1", score: "73 - 28" }
+  - { title: "Virtus Velletri vs Roma Eur", date: "2025-11-22", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1", score: "61 - 75" }
+  - { title: "Stelle Marine Basket vs Virtus Velletri", date: "2025-11-30", time: "18:30", location: "Palaassobalneari Piazza Regina Pacis 13 00122 Roma (Rm)", category: "DR1", score: "77 - 55" }
   - { title: "Virtus Velletri vs St. Charles", date: "2026-01-14", time: "21:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }
-  - { title: "Basket Genzano vs Virtus Velletri", date: "2025-12-13", time: "18:30", location: "Palestra Ist. Francesco De Sanctis Viale Giuseppe Mazzini 1 00045 Genzano Di Roma (Rm)", category: "DR1" }
-  - { title: "Virtus Velletri vs S.Anna Morena Basket", date: "2025-12-20", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }
+  - { title: "Basket Genzano vs Virtus Velletri", date: "2025-12-13", time: "18:30", location: "Palestra Ist. Francesco De Sanctis Viale Giuseppe Mazzini 1 00045 Genzano Di Roma (Rm)", category: "DR1", score: "83 - 79" }
+  - { title: "Virtus Velletri vs S.Anna Morena Basket", date: "2025-12-20", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1", score: "68 - 73" }
   - { title: "Cinecitta' Polaris vs Virtus Velletri", date: "2026-01-11", time: "20:15", location: "Tensostruttura Via Oppido Mamertina 100 00175 Roma (Rm)", category: "DR1" }
   - { title: "Algarve Roma Torrino vs Virtus Velletri", date: "2026-01-17", time: "20:15", location: "Impianto Tellene Via Claudio Villa 00128 Roma (Rm)", category: "DR1" }
   - { title: "Virtus Velletri vs Smit Roma Centro", date: "2026-01-24", time: "19:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "DR1" }

@@ -2,10 +2,10 @@
 title: Partite U13
 team_slug: under-13
 events:
-  - { title: "Basket Cavese 93 vs Virtus Velletri", date: "2025-11-28", time: "17:30", location: "Palestra Viale Giulio Venzi N. 23 00033 Cave (Rm)", category: "Under 13" }
-  - { title: "Virtus Velletri vs Basket San Cesareo", date: "2025-12-06", time: "11:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 13" }
-  - { title: "Pall. Colleferro vs Virtus Velletri", date: "2025-12-12", time: "19:00", location: "Scuola Elementare Barchiesi Vicolo Schiavi 00034 Colleferro (Rm)", category: "Under 13" }
-  - { title: "Virtus Velletri vs San Nilo Basket", date: "2025-12-20", time: "11:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 13" }
+  - { title: "Basket Cavese 93 vs Virtus Velletri", date: "2025-11-28", time: "17:30", location: "Palestra Viale Giulio Venzi N. 23 00033 Cave (Rm)", category: "Under 13", score: "15 - 71" }
+  - { title: "Virtus Velletri vs Basket San Cesareo", date: "2025-12-06", time: "11:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 13", score: "69 - 22" }
+  - { title: "Pall. Colleferro vs Virtus Velletri", date: "2025-12-12", time: "19:00", location: "Scuola Elementare Barchiesi Vicolo Schiavi 00034 Colleferro (Rm)", category: "Under 13", score: "32 - 69" }
+  - { title: "Virtus Velletri vs San Nilo Basket", date: "2025-12-20", time: "11:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 13", score: "76 - 24" }
   - { title: "Colonna vs Virtus Velletri", date: "2026-01-09", time: "19:00", location: "Palestra Comunale Via B. Buozzi 1A 00030 Colonna (Rm)", category: "Under 13" }
   - { title: "Virtus Velletri vs U.C. Basket Lanuvio", date: "2026-02-10", time: "18:00", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 13" }
   - { title: "Fort. Pall. Cisterna 2015 vs Virtus Velletri", date: "2026-01-24", time: "16:00", location: "Palestra Sc. El. ''G. Cena'' Via Ponchielli 04012 Cisterna Di Latina (Lt)", category: "Under 13" }

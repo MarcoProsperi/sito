@@ -1,6 +1,6 @@
 ---
 title: "Scoiattoli Big"
-description: "Minibasket Scoiattoli Big - Stagione 2025/2026"
+description: "I bambini cominciano a diventare “piccoli giocatori”: iniziano a capire meglio il gioco, a palleggiare, passare e tirare… ma sempre con tanta fantasia e allegria!"
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
@@ -45,7 +45,7 @@ roster:
     name: "Aida Maria"
     position: "Scoiattoli Big"
     year: "2017"
-    image: "/images/imm_8.png"
+    image: "/images/imm_f_1.png"
   - number: "34"
     name: "Francesco"
     position: "Scoiattoli Big"
@@ -65,7 +65,7 @@ roster:
     name: "Elena"
     position: "Scoiattoli Big"
     year: "2017"
-    image: "/images/imm_2.png"
+    image: "/images/imm_f_2.png"
   - number: "00"
     name: "Emanuele"
     position: "Scoiattoli Big"
@@ -88,5 +88,4 @@ category: "Minibasket"
 
 # Scoiattoli Big
 
-Gruppo Scoiattoli 2017.
-Si cresce e si gioca!
+I bambini cominciano a diventare “piccoli giocatori”: iniziano a capire meglio il gioco, a palleggiare, passare e tirare… ma sempre con tanta fantasia e allegria!

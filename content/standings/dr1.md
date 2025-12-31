@@ -2,10 +2,18 @@
 title: Divisione Regionale 1
 team_slug: dr1
 table:
-  - { rank: 1, team: "Virtus Velletri", points: 24, played: 12, won: 12, lost: 0 }
-  - { rank: 2, team: "Alfa Omega", points: 20, played: 12, won: 10, lost: 2 }
-  - { rank: 3, team: "San Nilo", points: 18, played: 12, won: 9, lost: 3 }
-  - { rank: 4, team: "Basket Roma", points: 16, played: 12, won: 8, lost: 4 }
-  - { rank: 5, team: "Fortitudo", points: 14, played: 12, won: 7, lost: 5 }
-  - { rank: 6, team: "Anzio Basket", points: 12, played: 12, won: 6, lost: 6 }
+  - { rank: 1, team: "Albano Basket Club", points: 16, played: 0, won: 0, lost: 0 }
+  - { rank: 2, team: "St. Charles", points: 16, played: 0, won: 0, lost: 0 }
+  - { rank: 3, team: "Club Marino Lions", points: 16, played: 0, won: 0, lost: 0 }
+  - { rank: 4, team: "Cinecitta' Polaris", points: 16, played: 0, won: 0, lost: 0 }
+  - { rank: 5, team: "Smit Roma Centro", points: 14, played: 0, won: 0, lost: 0 }
+  - { rank: 6, team: "Basket Genzano", points: 14, played: 0, won: 0, lost: 0 }
+  - { rank: 7, team: "Stelle Marine Basket", points: 14, played: 0, won: 0, lost: 0 }
+  - { rank: 8, team: "Algarve Roma Torrino", points: 14, played: 0, won: 0, lost: 0 }
+  - { rank: 9, team: "S.Anna Morena Basket", points: 12, played: 0, won: 0, lost: 0 }
+  - { rank: 10, team: "Roma Eur", points: 12, played: 0, won: 0, lost: 0 }
+  - { rank: 11, team: "Olimpia Roma S.Venanzio", points: 8, played: 0, won: 0, lost: 0 }
+  - { rank: 12, team: "Virtus Velletri", points: 4, played: 0, won: 0, lost: 0 }
+  - { rank: 13, team: "Apdb Roma", points: 4, played: 0, won: 0, lost: 0 }
+  - { rank: 14, team: "Atletico San Lorenzo", points: 4, played: 0, won: 0, lost: 0 }
 ---

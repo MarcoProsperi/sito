@@ -2,9 +2,9 @@
 title: Partite U14
 team_slug: under-14
 events:
-  - { title: "Virtus Velletri vs Blue Master Group", date: "2025-12-02", time: "16:45", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 14" }
-  - { title: "Basket Terracina vs Virtus Velletri", date: "2025-12-07", time: "11:30", location: "Pala Sami Via Delle Arene 212 04019 Terracina (Lt)", category: "Under 14" }
-  - { title: "Virtus Velletri vs Basket Bee", date: "2025-12-16", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 14" }
+  - { title: "Virtus Velletri vs Blue Master Group", date: "2025-12-02", time: "16:45", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 14", score: "56 - 47" }
+  - { title: "Basket Terracina vs Virtus Velletri", date: "2025-12-07", time: "11:30", location: "Pala Sami Via Delle Arene 212 04019 Terracina (Lt)", category: "Under 14", score: "46 - 49" }
+  - { title: "Virtus Velletri vs Basket Bee", date: "2025-12-16", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 14", score: "87 - 17" }
   - { title: "Basket Torvaianica vs Virtus Velletri", date: "2025-12-21", time: "16:30", location: "Palazzetto Via Levante S.N.C. 00071 Pomezia (Rm)", category: "Under 14" }
   - { title: "Virtus Velletri vs Fort. Pall. Cisterna 2015", date: "2026-01-20", time: "17:40", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 14" }
   - { title: "Polisportiva Priverno vs Virtus Velletri", date: "2026-01-19", time: "17:00", location: "Palestra San Tommaso Via Montanino 04015 Priverno (Lt)", category: "Under 14" }

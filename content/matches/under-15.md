@@ -2,12 +2,12 @@
 title: Partite U15
 team_slug: under-15
 events:
-  - { title: "Albano Basket Club vs Virtus Velletri", date: "2025-11-15", time: "11:15", location: "Palestra Comunale Via Vascarelle 110 00041 Albano Laziale (Rm)", category: "Under 15" }
-  - { title: "Virtus Velletri vs Basket Torvaianica", date: "2025-11-18", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15" }
-  - { title: "Pall. Colleferro vs Virtus Velletri", date: "2025-12-04", time: "18:00", location: "Scuola Elementare Barchiesi Vicolo Schiavi 00034 Colleferro (Rm)", category: "Under 15" }
-  - { title: "Virtus Velletri vs Virtus Basket Aprilia", date: "2025-12-09", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15" }
-  - { title: "Fortitudo Pallacanestro Cisterna 2015 vs Virtus Velletri", date: "2025-12-18", time: "19:00", location: "Palestra Sc. El. ''G. Cena'' Via Ponchielli 04012 Cisterna Di Latina (Lt)", category: "Under 15" }
-  - { title: "Virtus Velletri vs Basket Cavese 93", date: "2025-12-23", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15" }
+  - { title: "Albano Basket Club vs Virtus Velletri", date: "2025-11-15", time: "11:15", location: "Palestra Comunale Via Vascarelle 110 00041 Albano Laziale (Rm)", category: "Under 15", score: "33 - 72" }
+  - { title: "Virtus Velletri vs Basket Torvaianica", date: "2025-11-18", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15", score: "52 - 45" }
+  - { title: "Pall. Colleferro vs Virtus Velletri", date: "2025-12-04", time: "18:00", location: "Scuola Elementare Barchiesi Vicolo Schiavi 00034 Colleferro (Rm)", category: "Under 15", score: "59 - 85" }
+  - { title: "Virtus Velletri vs Virtus Basket Aprilia", date: "2025-12-09", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15", score: "76 - 47" }
+  - { title: "Fortitudo Pallacanestro Cisterna 2015 vs Virtus Velletri", date: "2025-12-18", time: "19:00", location: "Palestra Sc. El. ''G. Cena'' Via Ponchielli 04012 Cisterna Di Latina (Lt)", category: "Under 15", score: "38 - 30" }
+  - { title: "Virtus Velletri vs Basket Cavese 93", date: "2025-12-23", time: "17:50", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15", score: "58 - 54" }
   - { title: "Polisportiva Virtus Settanta Pomezia vs Virtus Velletri", date: "2026-01-11", time: "12:00", location: "Pala Margherita Hack Via Singen Snc 00071 Pomezia (Rm)", category: "Under 15" }
   - { title: "Basket San Cesareo vs Virtus Velletri", date: "2026-01-18", time: "10:00", location: "Palestra A. Martinucci Viale Dei Cedri S.N.C. 00030 San Cesareo (Rm)", category: "Under 15" }
   - { title: "Virtus Velletri vs Academy Olimpia", date: "2026-01-27", time: "17:30", location: "Palestra Polivalente Via Del Campo Sportivo 00049 Velletri (Rm)", category: "Under 15" }

@@ -1,6 +1,6 @@
 ---
 title: "Aquilotti Small"
-description: "Minibasket Aquilotti Small - Stagione 2025/2026"
+description: "Qui il minibasket comincia a sembrare davvero basket: più attenzione ai fondamentali, più partite, più gioco di squadra. Si cresce, ma il sorriso resta la cosa più importante."
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
@@ -55,7 +55,7 @@ roster:
     name: "Luna"
     position: "Aquilotti"
     year: "2016"
-    image: "/images/imm_10.png"
+    image: "/images/imm_f_1.png"
   - number: "00"
     name: "Mattia"
     position: "Aquilotti"
@@ -88,5 +88,4 @@ category: "Minibasket"
 
 # Aquilotti Small
 
-Gruppo Aquilotti 2015/2016/2017.
-Si comincia a fare sul serio con il 4 contro 4!
+Qui il minibasket comincia a sembrare davvero basket: più attenzione ai fondamentali, più partite, più gioco di squadra. Si cresce, ma il sorriso resta la cosa più importante.

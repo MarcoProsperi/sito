@@ -36,7 +36,7 @@ const items = [
         textColor: "text-virtus-blue"
     },
     {
-        title: "CALENDARIO",
+        title: "CALENDARIO E RISULTATI",
         subtitle: "PROSSIME GARE",
         description: "Non perdere nemmeno una partita.",
         href: "/calendario",

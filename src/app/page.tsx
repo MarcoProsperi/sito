@@ -11,11 +11,14 @@ import { getAllStandings, getAllMatches } from "@/lib/content";
 export default function Home() {
   const allStandings = getAllStandings();
 
-  // Sort all matches by date
-  const allMatches = getAllMatches().sort((a, b) => {
-    // Use full date comparison if available, simplistic here for format "YYYY-MM-DD"
-    return new Date(a.date).getTime() - new Date(b.date).getTime();
-  });
+  // Filter and sort all matches by date
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const upcomingMatches = getAllMatches()
+    .filter(match => new Date(match.date) >= today)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 5);
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -136,7 +139,7 @@ export default function Home() {
             </section>
 
             {/* Calendar Widget */}
-            <CalendarWidget events={allMatches} />
+            <CalendarWidget events={upcomingMatches} title="Risultati e Calendario" />
 
             {/* Standings Widget */}
             <StandingsWidget groups={allStandings} />

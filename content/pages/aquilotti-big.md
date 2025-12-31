@@ -1,6 +1,6 @@
 ---
 title: "Aquilotti Big"
-description: "Minibasket Aquilotti Big - Stagione 2025/2026"
+description: "Qui il minibasket comincia a sembrare davvero basket: più attenzione ai fondamentali, più partite, più gioco di squadra. Si cresce, ma il sorriso resta la cosa più importante."
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
@@ -143,5 +143,4 @@ category: "Minibasket"
 
 # Aquilotti Big
 
-Gruppo Aquilotti 2015/2016.
-Preparazione al basket giovanile!
+Qui il minibasket comincia a sembrare davvero basket: più attenzione ai fondamentali, più partite, più gioco di squadra. Si cresce, ma il sorriso resta la cosa più importante.

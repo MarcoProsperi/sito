@@ -24,10 +24,10 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
     };
 
     return (
-        <nav className="fixed w-full z-50 backdrop-blur-md shadow-lg border-b border-white/10">
-            {/* Diagonal background for navbar */}
-            <div className="absolute inset-0 bg-gradient-to-br from-virtus-yellow/95 via-virtus-yellow/95 to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-virtus-blue/95 via-virtus-blue/95 to-transparent"></div>
+        <nav className="fixed w-full z-50 backdrop-blur-md shadow-lg border-b border-white/10 overflow-visible">
+            {/* Cleaner background for navbar */}
+            <div className="absolute inset-0 bg-virtus-blue/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-virtus-blue/20 to-transparent"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="flex justify-between items-center h-20">
@@ -49,38 +49,38 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                         </Link>
                     </div>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-6">
+                    {/* Desktop Menu - Switch to lg for 9-item menu */}
+                    <div className="hidden lg:flex items-center space-x-3 xl:space-x-5">
                         {menu.map((item) => (
                             <div key={item.label} className="relative group">
                                 {item.children ? (
                                     <button
-                                        className={`flex items-center gap-1 text-sm font-display font-medium transition-colors uppercase tracking-wider py-2 ${pathname.startsWith(item.href) && item.href !== "/" ? "text-virtus-yellow font-bold" : "text-white/90 hover:text-virtus-yellow"
+                                        className={`flex items-center gap-1 text-[13px] xl:text-sm font-display font-medium transition-colors uppercase tracking-wider py-4 ${pathname.startsWith(item.href) && item.href !== "/" ? "text-virtus-yellow font-bold" : "text-white/90 hover:text-virtus-yellow"
                                             }`}
                                     >
                                         {item.label}
-                                        <ChevronDown className="w-4 h-4" />
+                                        <ChevronDown className="w-3 h-3" />
                                     </button>
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className={`text-sm font-display font-medium transition-colors uppercase tracking-wider relative group-hover:text-virtus-yellow ${pathname === item.href ? "text-virtus-yellow font-bold" : "text-white/90"
+                                        className={`flex items-center text-[13px] xl:text-sm font-display font-medium transition-colors uppercase tracking-wider py-4 relative group-hover:text-virtus-yellow ${pathname === item.href ? "text-virtus-yellow font-bold" : "text-white/90"
                                             }`}
                                     >
                                         {item.label}
-                                        <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-virtus-yellow transition-all group-hover:w-full ${pathname === item.href ? "w-full" : ""}`}></span>
+                                        <span className={`absolute bottom-3 left-0 w-0 h-0.5 bg-virtus-yellow transition-all group-hover:w-full ${pathname === item.href ? "w-full" : ""}`}></span>
                                     </Link>
                                 )}
 
                                 {/* Dropdown */}
                                 {item.children && (
-                                    <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
-                                        <div className="bg-virtus-blue border border-white/10 rounded-none shadow-2xl overflow-hidden py-2">
+                                    <div className="absolute left-0 top-full pt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                                        <div className="bg-virtus-blue border border-white/10 rounded-b shadow-2xl overflow-hidden py-2">
                                             {item.children.map((child) => (
                                                 <Link
                                                     key={child.label}
                                                     href={child.href}
-                                                    className="block px-6 py-3 text-sm text-white/80 hover:bg-white/5 hover:text-virtus-yellow font-display uppercase tracking-wide border-l-2 border-transparent hover:border-virtus-yellow transition-all"
+                                                    className="block px-6 py-3 text-xs text-white/80 hover:bg-white/5 hover:text-virtus-yellow font-display uppercase tracking-wide border-l-2 border-transparent hover:border-virtus-yellow transition-all"
                                                 >
                                                     {child.label}
                                                 </Link>
@@ -92,8 +92,8 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                         ))}
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    {/* Mobile Menu Button - Visible until lg */}
+                    <div className="lg:hidden flex items-center">
                         <button
                             onClick={toggleMenu}
                             className="text-white hover:text-virtus-yellow focus:outline-none p-2"
@@ -112,16 +112,16 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         // Absolute positioning to overlay content
-                        className="md:hidden absolute top-20 left-0 w-full bg-virtus-blue border-t border-white/10 shadow-2xl z-40 max-h-[80vh] overflow-y-auto"
+                        className="lg:hidden absolute top-20 left-0 w-full bg-virtus-blue border-t border-white/10 shadow-2xl z-40 max-h-[80vh] overflow-y-auto"
                     >
-                        <div className="px-4 pt-2 pb-6 space-y-2">
+                        <div className="px-4 pt-2 pb-6 space-y-1">
                             {menu.map((item) => (
                                 <div key={item.label}>
                                     {item.children ? (
                                         <>
                                             <button
                                                 onClick={() => toggleSubmenu(item.label)}
-                                                className="w-full flex justify-between items-center py-3 text-lg font-medium text-white border-b border-white/10"
+                                                className="w-full flex justify-between items-center py-3 text-base font-medium text-white border-b border-white/10"
                                             >
                                                 {item.label}
                                                 <ChevronDown className={`w-5 h-5 transition-transform ${openSubmenu === item.label ? "rotate-180" : ""}`} />
@@ -132,14 +132,14 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                                                         initial={{ height: 0, opacity: 0 }}
                                                         animate={{ height: "auto", opacity: 1 }}
                                                         exit={{ height: 0, opacity: 0 }}
-                                                        className="pl-4 space-y-2 bg-black/20 overflow-hidden rounded-md my-1"
+                                                        className="pl-4 space-y-1 bg-black/20 overflow-hidden rounded-md my-1"
                                                     >
                                                         {item.children.map(child => (
                                                             <Link
                                                                 key={child.label}
                                                                 href={child.href}
                                                                 onClick={toggleMenu}
-                                                                className="block py-2 text-base text-white/80 hover:text-virtus-yellow pl-2"
+                                                                className="block py-2 text-sm text-white/80 hover:text-virtus-yellow pl-2"
                                                             >
                                                                 {child.label}
                                                             </Link>
@@ -152,7 +152,7 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                                         <Link
                                             href={item.href}
                                             onClick={toggleMenu}
-                                            className={`block py-3 text-lg font-medium border-b border-white/10 ${pathname === item.href ? "text-virtus-yellow" : "text-white"
+                                            className={`block py-3 text-base font-medium border-b border-white/10 ${pathname === item.href ? "text-virtus-yellow" : "text-white"
                                                 }`}
                                         >
                                             {item.label}
