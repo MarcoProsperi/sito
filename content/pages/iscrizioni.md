@@ -22,6 +22,7 @@ Per iscriversi è necessario seguire questi 4 semplici passaggi:
 Compila il modulo direttamente online, risparmiando tempo! Una volta terminato potrai scaricare il PDF già compilato da firmare.
 
 *   [**Compila Online: Modulo Minibasket (2020-2014) —> VAI AL MODULO**](/iscrizioni/modulo-minibasket)
+*   [**Compila Online: Modulo Basket Agonistico —> VAI AL MODULO**](/iscrizioni/modulo-basket)
 
 ### Moduli Statici (PDF classico)
 

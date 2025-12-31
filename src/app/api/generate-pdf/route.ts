@@ -6,72 +6,65 @@ import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(req: NextRequest) {
     try {
-        const formData = await req.json();
+        const body = await req.json();
+        const { formType, ...formData } = body;
+
+        // Selection of template based on formType
+        const templateFile = formType === 'basket'
+            ? 'modulo-iscrizione-basket-25-26.pdf'
+            : 'modulo-iscrizione-minibasket-25-26.pdf';
 
         // Prepare paths
         const scriptPath = path.join(process.cwd(), 'scripts', 'fill_pdf.py');
-        const templatePath = path.join(process.cwd(), 'public', 'pdf', 'modulo-iscrizione-minibasket-25-26.pdf');
+        const templatePath = path.join(process.cwd(), 'public', 'pdf', templateFile);
         const outputFilename = `modulo_${uuidv4()}.pdf`;
-        const outputPath = path.join(process.cwd(), 'public', 'temp', outputFilename);
+        const tempDir = path.join(process.cwd(), 'public', 'temp');
+        const outputPath = path.join(tempDir, outputFilename);
 
         // Ensure temp directory exists
-        const tempDir = path.join(process.cwd(), 'public', 'temp');
         if (!fs.existsSync(tempDir)) {
             fs.mkdirSync(tempDir, { recursive: true });
         }
 
-        // Stringify form data for python
         const jsonData = JSON.stringify(formData);
 
-        // Spawn python process
-        return new Promise((resolve) => {
-            const pythonProcess = spawn('python', [
-                scriptPath,
-                '--data', jsonData,
-                '--output', outputPath,
-                '--template', templatePath
-            ]);
-
+        // Run Python script to generate PDF
+        await new Promise((resolve, reject) => {
+            const pythonProcess = spawn('python', [scriptPath, '--data', jsonData, '--output', outputPath, '--template', templatePath]);
             let errorData = '';
-            pythonProcess.stderr.on('data', (data) => {
-                errorData += data.toString();
-            });
-
+            pythonProcess.stderr.on('data', (data) => errorData += data.toString());
             pythonProcess.on('close', (code) => {
                 if (code !== 0) {
-                    console.error(`Python script failed with code ${code}: ${errorData}`);
-                    resolve(NextResponse.json({ error: 'Failed to generate PDF' }, { status: 500 }));
-                    return;
+                    console.error(`Python script failed: ${errorData}`);
+                    reject(new Error('Failed to generate PDF'));
+                } else if (!fs.existsSync(outputPath)) {
+                    reject(new Error('PDF file was not created'));
+                } else {
+                    resolve(true);
                 }
-
-                if (!fs.existsSync(outputPath)) {
-                    console.error('Output file was not created');
-                    resolve(NextResponse.json({ error: 'PDF file not found' }, { status: 500 }));
-                    return;
-                }
-
-                // Read the file and return it
-                const fileBuffer = fs.readFileSync(outputPath);
-
-                // Clean up temp file after reading
-                try {
-                    fs.unlinkSync(outputPath);
-                } catch (e) {
-                    console.error('Failed to delete temp file:', e);
-                }
-
-                resolve(new NextResponse(fileBuffer, {
-                    status: 200,
-                    headers: {
-                        'Content-Type': 'application/pdf',
-                        'Content-Disposition': `attachment; filename="modulo-iscrizione-virtus.pdf"`,
-                    },
-                }));
             });
         });
 
+        // Read the generated PDF
+        const fileBuffer = fs.readFileSync(outputPath);
+
+        // Clean up temp file
+        try {
+            fs.unlinkSync(outputPath);
+        } catch (e) {
+            console.error('Failed to delete temp file:', e);
+        }
+
+        return new NextResponse(fileBuffer, {
+            status: 200,
+            headers: {
+                'Content-Type': 'application/pdf',
+                'Content-Disposition': `attachment; filename="modulo-iscrizione-virtus.pdf"`,
+            },
+        });
+
     } catch (error) {
-        console.error('Error generating PDF:', error);
+        console.error('Error in generate-pdf route:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }

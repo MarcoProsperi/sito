@@ -4,7 +4,8 @@ import React, { useState, useRef } from 'react';
 import { Printer, Download, ArrowRight, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ type = 'minibasket' }: { type?: 'minibasket' | 'basket' }) => {
+    const isBasket = type === 'basket';
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
         // Atleta
@@ -71,7 +72,7 @@ const RegistrationForm = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, formType: type }),
             });
 
             if (!response.ok) throw new Error('Errore nella generazione del PDF');
@@ -99,9 +100,9 @@ const RegistrationForm = () => {
             <div className="print:hidden bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                 <div className="bg-virtus-blue p-8 text-center">
                     <h2 className="text-3xl font-display font-bold text-white uppercase tracking-tighter mb-2">
-                        Modulo Iscrizione Digitale
+                        Modulo Iscrizione {isBasket ? 'Basket' : 'Minibasket'}
                     </h2>
-                    <p className="text-virtus-yellow font-medium italic">Minibasket - Stagione 2025/2026</p>
+                    <p className="text-virtus-yellow font-medium italic">{isBasket ? 'Agonistica' : 'Minibasket'} - Stagione 2025/2026</p>
 
                     {/* Progress Bar */}
                     <div className="mt-8 flex items-center justify-center gap-4">
