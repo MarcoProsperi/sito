@@ -7,9 +7,9 @@ import { ArrowRight, Trophy, Users, Calendar, Newspaper, Image as ImageIcon } fr
 const items = [
     {
         title: "PRIMA SQUADRA",
-        subtitle: "SERIE C SILVER",
-        description: "Scopri il roster della stagione 2024/25.",
-        href: "/squadre",
+        subtitle: "DIVISIONE REGIONALE 1",
+        description: "Scopri il roster della stagione 2025/26.",
+        href: "/dr1",
         icon: Users,
         colSpan: "col-span-1 md:col-span-2",
         bg: "bg-virtus-blue",
