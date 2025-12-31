@@ -60,7 +60,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         {page.meta.title}
                     </h1>
                     {page.meta.description && (
-                        <p className={`text-base md:text-lg mx-auto font-medium ${page.meta.category === 'Minibasket'
+                        <p className={`text-base md:text-lg mx-auto font-medium ${page.meta.category === 'Minibasket' || slug === 'news'
                             ? 'text-white text-justify leading-relaxed italic max-w-3xl'
                             : 'text-virtus-yellow/90 max-w-2xl text-center'
                             }`}>

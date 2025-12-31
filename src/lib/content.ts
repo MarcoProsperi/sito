@@ -132,3 +132,42 @@ export function getMatchBySlug(slug: string): MatchEvent | null {
     const allMatches = getAllMatches();
     return allMatches.find(m => m.slug === slug) || null;
 }
+
+// ----------------------------------------------------------------------------
+// NEWS METHODS
+// ----------------------------------------------------------------------------
+
+export function getAllNews() {
+    const dir = path.join(contentDirectory, 'news');
+    if (!fs.existsSync(dir)) return [];
+
+    const files = fs.readdirSync(dir);
+    return files.map((fileName) => {
+        if (!fileName.endsWith('.md')) return null;
+
+        const fullPath = path.join(dir, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const { data, content } = matter(fileContents);
+        const slug = fileName.replace(/\.md$/, '');
+
+        return {
+            slug,
+            meta: data,
+            content
+        };
+    }).filter((n): n is NonNullable<typeof n> => n !== null)
+        .sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime());
+}
+
+export function getNewsBySlug(slug: string) {
+    const fullPath = path.join(contentDirectory, 'news', `${slug}.md`);
+
+    if (!fs.existsSync(fullPath)) {
+        return null;
+    }
+
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    return { slug, meta: data, content };
+}

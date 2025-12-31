@@ -6,10 +6,18 @@ import Image from "next/image";
 import CalendarWidget from "@/components/CalendarWidget";
 import StandingsWidget from "@/components/StandingsWidget";
 import SponsorsWidget from "@/components/SponsorsWidget";
-import { getAllStandings, getAllMatches } from "@/lib/content";
+import { getAllStandings, getAllMatches, getAllNews } from "@/lib/content";
 
 export default function Home() {
   const allStandings = getAllStandings();
+  const latestNews = getAllNews()
+    .filter((n: any) => n.meta.featured !== false)
+    .slice(0, 4)
+    .map((n: any, i: number) => ({
+      id: i,
+      text: n.meta.title,
+      link: `/news/${n.slug}`
+    }));
 
   // Filter and sort all matches by date
   const today = new Date();
@@ -46,14 +54,7 @@ export default function Home() {
       </section>
 
       {/* News Ticker */}
-      <NewsTicker
-        news={[
-          { id: 1, text: "Grande vittoria per l'Under 17 contro Frascati!", link: "/news/vittoria-u17" },
-          { id: 2, text: "Iscrizioni aperte per la stagione 2024/25 - Prenota la tua prova gratuita", link: "/iscrizioni" },
-          { id: 3, text: "Festa di Natale Virtus: 20 Dicembre al Palazzetto", link: "/news/festa-natale" },
-          { id: 4, text: "Benvenuto al nuovo Main Sponsor: Pizzeria Da Mario", link: "/news/sponsor" },
-        ]}
-      />
+      <NewsTicker news={latestNews} />
 
       {/* NBA Style Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12">
