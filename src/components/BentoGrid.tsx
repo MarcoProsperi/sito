@@ -58,7 +58,7 @@ export default function BentoGrid({ compact = false }: { compact?: boolean }) {
                 </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[300px]">
                 {items.map((item, index) => (
                     <motion.div
                         key={item.title}
