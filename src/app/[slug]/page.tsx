@@ -6,7 +6,7 @@ import Image from 'next/image';
 import StandingsWidget from '@/components/StandingsWidget';
 import CalendarWidget from '@/components/CalendarWidget';
 import SponsorsWidget from '@/components/SponsorsWidget';
-import { getAllStandings, getAllMatches } from '@/lib/content';
+import { getAllStandings, getAllMatches, getSponsors } from '@/lib/content';
 
 export async function generateStaticParams() {
     const pages = getAllPages();
@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function Page({ params }: { params: { slug: string } }) {
     const { slug } = await Promise.resolve(params);
     const page = getPageContent(slug);
+    const sponsors = getSponsors();
 
     if (!page) {
         notFound();
@@ -91,7 +92,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                                     <span className="w-2 h-8 bg-virtus-yellow mr-4"></span>
                                     {page.meta.category === 'Minibasket' ? 'Miniatleti' : 'Roster'}
                                 </h2>
-                                <div className={`grid grid-cols-1 md:grid-cols-2 ${page.meta.category === 'Minibasket' ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-6`}>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                                     {(page.meta.roster as any[]).map((player: any, index: number) => {
                                         const playerNum = parseInt(player.number) || 0;
                                         const isEven = playerNum % 2 === 0;
@@ -182,7 +183,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     {/* Right Column: Widgets */}
                     <div className="space-y-12">
                         {/* Sponsors Widget */}
-                        <SponsorsWidget />
+                        <SponsorsWidget sponsors={sponsors} />
 
                         {/* Standings Widget */}
                         {(() => {
