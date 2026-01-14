@@ -3,8 +3,10 @@ title: "DR3"
 description: "Divisione Regionale 3 - Stagione 2025/26"
 heroImage: "/images/hero.png"
 staff:
-  - role: "Allenatore"
-    name: "Nome Cognome"
+  - role: "Head Coach"
+    name: "Roberto Monteriu"
+  - role: "Assistant Coach"
+    name: "Fabio Taglioni"
 roster:
   - number: "00"
     name: "Giocatore 1"

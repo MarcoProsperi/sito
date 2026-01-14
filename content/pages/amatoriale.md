@@ -3,8 +3,8 @@ title: "Amatori"
 description: "Campionato Amatoriale - Stagione 2025/26"
 heroImage: "/images/hero.png"
 staff:
-  - role: "Responsabile"
-    name: "Nome Cognome"
+  - role: "Coach"
+    name: "Claudio Pesoli"
 roster:
   - number: "00"
     name: "Giocatore 1"

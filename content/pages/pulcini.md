@@ -4,7 +4,9 @@ description: "I più piccoli del minibasket: scoprono il campo, il pallone e sop
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Nome Cognome"
+    name: "Claudio Pesoli"
+  - role: "Istruttore"
+    name: "Lorena Matei"
 roster:
   - number: "3"
     name: "Francesco"

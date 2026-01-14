@@ -4,7 +4,9 @@ description: "Campionato Under 13 - Stagione 2025/26"
 heroImage: "/images/hero.png"
 staff:
   - role: "Coach"
-    name: "Nome Cognome"
+    name: "Massimiliano Ricca"
+  - role: "Assistant Coach"
+    name: "Arianna Cerini"
 roster:
   - number: "00"
     name: "Atleta U13"

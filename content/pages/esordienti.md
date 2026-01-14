@@ -4,7 +4,7 @@ description: "Il ponte verso il basket vero e proprio: regolamento più vicino a
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Da Definire"
+    name: "Claudio Pesoli"
 roster:
   - number: "0"
     name: "Giulio Claudio"

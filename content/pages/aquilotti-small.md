@@ -4,7 +4,9 @@ description: "Qui il minibasket comincia a sembrare davvero basket: più attenzi
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Da Definire"
+    name: "Fabio Taglioni"
+  - role: "Istruttore"
+    name: "Francesco Remiddi"
 roster:
   - number: "8"
     name: "Adriano"

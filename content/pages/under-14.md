@@ -4,7 +4,9 @@ description: "Campionato Under 14 - Stagione 2025/26"
 heroImage: "/images/hero.png"
 staff:
   - role: "Coach"
-    name: "Nome Cognome"
+    name: "Massimiliano Ricca"
+  - role: "Assistente"
+    name: "Claudio Pesoli"
 roster:
   - number: "00"
     name: "Atleta U14"

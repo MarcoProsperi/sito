@@ -4,7 +4,9 @@ description: "Qui il minibasket comincia a sembrare davvero basket: più attenzi
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Da Definire"
+    name: "Claudio Pesoli"
+  - role: "Istruttore"
+    name: "Arianna Cerini"
 roster:
   - number: "6"
     name: "Giovanni"

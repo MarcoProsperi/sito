@@ -4,7 +4,7 @@ description: "Campionato Under 17 - Stagione 2025/26"
 heroImage: "/images/hero.png"
 staff:
   - role: "Coach"
-    name: "Nome Cognome"
+    name: "Roberto Monteriu"
 roster:
   - number: "00"
     name: "Atleta U17"

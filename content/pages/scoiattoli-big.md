@@ -4,7 +4,9 @@ description: "I bambini cominciano a diventare “piccoli giocatori”: iniziano
 heroImage: "/images/hero.png"
 staff:
   - role: "Istruttore"
-    name: "Da Definire"
+    name: "Fabio Taglioni"
+  - role: "Istruttore"
+    name: "Lorena Matei"
 roster:
   - number: "6"
     name: "Giovanni"
