@@ -148,19 +148,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <style jsx>{`
-                @keyframes scrollX {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                .animate-scroll-x {
-                  animation: scrollX 30s linear infinite;
-                  width: max-content;
-                }
-                .hover\:pause:hover {
-                  animation-play-state: paused;
-                }
-              `}</style>
             </section>
 
             {/* Instagram Feed */}
