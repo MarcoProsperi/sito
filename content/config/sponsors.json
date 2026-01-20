@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Apollo 11",
+        "logo": "/images/sponsors/Apollo11.png",
+        "url": "https://www.apollo11group.it/"
+    },
+    {
+        "name": "Bird Box",
+        "logo": "/images/sponsors/Bird Box.jpg"
+    },
+    {
+        "name": "Ciana",
+        "logo": "/images/sponsors/Ciana.jpg"
+    },
+    {
+        "name": "Farmacia San Raffele",
+        "logo": "/images/sponsors/Farmacia San Raffele.jpg"
+    },
+    {
+        "name": "Francy's cake",
+        "logo": "/images/sponsors/Francy's cake.jpg"
+    },
+    {
+        "name": "La Meccanica",
+        "logo": "/images/sponsors/La Meccanica.jpeg"
+    },
+    {
+        "name": "Marcelli",
+        "logo": "/images/sponsors/Marcelli.png"
+    },
+    {
+        "name": "Riqualifica 360",
+        "logo": "/images/sponsors/Riqualifica 360.jpg",
+        "url": "https://www.riqualificazione360.it/"
+    },
+    {
+        "name": "Trattoria Duilio",
+        "logo": "/images/sponsors/Trattoria Duilio.jpg"
+    },
+    {
+        "name": "In Out",
+        "logo": "/images/sponsors/in out.jpg"
+    }
+]

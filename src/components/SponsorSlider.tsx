@@ -78,21 +78,37 @@ export default function SponsorSlider() {
                     }}
                 >
                     <div className="flex gap-8 md:gap-12 items-center">
-                        {duplicatedSponsors.map((sponsor, index) => (
-                            <div
-                                key={`${sponsor.name}-${index}`}
-                                className="flex-shrink-0 w-32 h-24 md:w-40 md:h-28 relative grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
-                            >
-                                <div className="w-full h-full bg-white rounded-lg shadow-md flex items-center justify-center p-4 border border-gray-100">
-                                    {/* Placeholder - sostituire con loghi veri */}
-                                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center">
-                                        <span className="text-xs font-bold text-gray-500 text-center px-2">
-                                            {sponsor.name}
-                                        </span>
+                        {duplicatedSponsors.map((sponsor, index) => {
+                            const isPdf = sponsor.logo?.toLowerCase().endsWith('.pdf');
+                            return (
+                                <div
+                                    key={`${sponsor.name}-${index}`}
+                                    className="flex-shrink-0 w-32 h-24 md:w-40 md:h-28 relative grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
+                                >
+                                    <div className="w-full h-full bg-white rounded-lg shadow-md flex items-center justify-center p-4 border border-gray-100 overflow-hidden relative">
+                                        {sponsor.logo ? (
+                                            isPdf ? (
+                                                <div className="w-full h-full relative pointer-events-none overflow-hidden flex items-center justify-center">
+                                                    <embed
+                                                        src={`${sponsor.logo}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`}
+                                                        type="application/pdf"
+                                                        className="w-[150%] h-[150%] absolute pointer-events-none"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <Image src={sponsor.logo} alt={sponsor.name} fill className="object-contain p-2" />
+                                            )
+                                        ) : (
+                                            <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center">
+                                                <span className="text-xs font-bold text-gray-500 text-center px-2">
+                                                    {sponsor.name}
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
 

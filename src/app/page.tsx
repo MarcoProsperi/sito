@@ -6,10 +6,11 @@ import Image from "next/image";
 import CalendarWidget from "@/components/CalendarWidget";
 import StandingsWidget from "@/components/StandingsWidget";
 import SponsorsWidget from "@/components/SponsorsWidget";
-import { getAllStandings, getAllMatches, getAllNews } from "@/lib/content";
+import { getAllStandings, getAllMatches, getAllNews, getSponsors } from "@/lib/content";
 
 export default function Home() {
   const allStandings = getAllStandings();
+  const sponsors = getSponsors();
   const latestNews = getAllNews()
     .filter((n: any) => n.meta.featured !== false)
     .slice(0, 4)
@@ -78,7 +79,21 @@ export default function Home() {
               </h3>
               <div className="h-48 overflow-hidden relative">
                 <div className="animate-sponsor-rotate">
-                  {[1, 2, 3, 4, 5, 6].map((i) => (
+                  {sponsors.length > 0 ? sponsors.map((sponsor: any, i: number) => (
+                    <div key={i} className="bg-white rounded p-8 flex items-center justify-center h-48 border border-gray-200 hover:border-virtus-yellow transition-colors absolute inset-0 overflow-hidden relative">
+                      {sponsor.logo ? (
+                        <Image
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          fill
+                          className="object-contain p-4"
+                          sizes="(max-width: 1024px) 100vw, 800px"
+                        />
+                      ) : (
+                        <span className="text-lg font-bold text-gray-400">{sponsor.name}</span>
+                      )}
+                    </div>
+                  )) : [1, 2, 3, 4, 5, 6].map((i) => (
                     <div key={i} className="bg-gray-50 rounded p-8 flex items-center justify-center h-48 border border-gray-200 hover:border-virtus-yellow transition-colors absolute inset-0">
                       <span className="text-lg font-bold text-gray-400">Sponsor {i}</span>
                     </div>
@@ -103,7 +118,7 @@ export default function Home() {
           <div className="space-y-8">
 
             {/* Vertical Sponsor Carousel */}
-            <SponsorsWidget />
+            <SponsorsWidget sponsors={sponsors} />
 
             {/* Social Links */}
 

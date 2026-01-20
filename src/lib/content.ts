@@ -171,3 +171,14 @@ export function getNewsBySlug(slug: string) {
 
     return { slug, meta: data, content };
 }
+export function getSponsors() {
+    try {
+        const fullPath = path.join(contentDirectory, 'config', 'sponsors.json');
+        if (!fs.existsSync(fullPath)) return [];
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        return JSON.parse(fileContents);
+    } catch (error) {
+        console.error("Error reading sponsors:", error);
+        return [];
+    }
+}
