@@ -10,7 +10,7 @@ interface Sponsor {
 
 export default function SponsorsWidget({ sponsors = [] }: { sponsors?: Sponsor[] }) {
   // If no sponsors, show placeholders
-  const displaySponsors = sponsors.length > 0 ? sponsors : [1, 2, 3, 4, 5, 6].map(i => ({ name: `Sponsor ${i}`, logo: "" }));
+  const displaySponsors: Sponsor[] = sponsors.length > 0 ? sponsors : [1, 2, 3, 4, 5, 6].map(i => ({ name: `Sponsor ${i}`, logo: "" }));
 
   return (
     <section className="bg-white rounded-lg p-6 shadow-md mb-8">
@@ -20,15 +20,27 @@ export default function SponsorsWidget({ sponsors = [] }: { sponsors?: Sponsor[]
       <div className="h-80 overflow-hidden relative">
         <div className="animate-scroll-up space-y-4">
           {displaySponsors.map((sponsor, i) => (
-            <div key={i} className="bg-white rounded p-4 flex items-center justify-center h-24 border border-gray-200 hover:border-virtus-yellow transition-colors flex-shrink-0 group overflow-hidden relative">
+            <div key={i} className="bg-white rounded p-1 flex items-center justify-center h-24 border border-gray-200 hover:border-virtus-yellow transition-colors flex-shrink-0 group overflow-hidden relative">
               {sponsor.logo ? (
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  fill
-                  className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all"
-                  sizes="(max-width: 768px) 100vw, 200px"
-                />
+                sponsor.url ? (
+                  <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="relative w-full h-full block">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain transition-all"
+                      sizes="(max-width: 768px) 100vw, 200px"
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain transition-all"
+                    sizes="(max-width: 768px) 100vw, 200px"
+                  />
+                )
               ) : (
                 <span className="text-sm font-bold text-gray-400">{sponsor.name}</span>
               )}
@@ -36,15 +48,27 @@ export default function SponsorsWidget({ sponsors = [] }: { sponsors?: Sponsor[]
           ))}
           {/* Duplicate for infinite scroll */}
           {displaySponsors.map((sponsor, i) => (
-            <div key={`dup-${i}`} className="bg-white rounded p-4 flex items-center justify-center h-24 border border-gray-200 hover:border-virtus-yellow transition-colors flex-shrink-0 group overflow-hidden relative">
+            <div key={`dup-${i}`} className="bg-white rounded p-1 flex items-center justify-center h-24 border border-gray-200 hover:border-virtus-yellow transition-colors flex-shrink-0 group overflow-hidden relative">
               {sponsor.logo ? (
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  fill
-                  className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all"
-                  sizes="(max-width: 768px) 100vw, 200px"
-                />
+                sponsor.url ? (
+                  <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="relative w-full h-full block">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain transition-all"
+                      sizes="(max-width: 768px) 100vw, 200px"
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain transition-all"
+                    sizes="(max-width: 768px) 100vw, 200px"
+                  />
+                )
               ) : (
                 <span className="text-sm font-bold text-gray-400">{sponsor.name}</span>
               )}
