@@ -6,6 +6,7 @@ import Image from "next/image";
 import CalendarWidget from "@/components/CalendarWidget";
 import StandingsWidget from "@/components/StandingsWidget";
 import SponsorsWidget from "@/components/SponsorsWidget";
+import HorizontalSponsorCarousel from "@/components/HorizontalSponsorCarousel";
 import { getAllStandings, getAllMatches, getAllNews, getSponsors } from "@/lib/content";
 
 export default function Home() {
@@ -72,82 +73,12 @@ export default function Home() {
               <BentoGrid compact={true} />
             </div>
 
-            {/* Horizontal Marquee Sponsor Carousel */}
+            {/* Horizontal Timed Sponsor Carousel */}
             <section className="bg-white rounded-lg p-6 shadow-md">
               <h3 className="text-2xl font-display font-bold text-virtus-blue uppercase tracking-tight mb-4 pb-2 border-b-2 border-virtus-yellow">
                 I Nostri Partner
               </h3>
-              <div className="h-48 overflow-hidden relative">
-                <div className="flex animate-scroll-x hover:pause">
-                  <div className="flex gap-4 pr-4">
-                    {sponsors.length > 0 ? sponsors.map((sponsor: any, i: number) => (
-                      <div key={i} className="bg-white rounded p-1 flex items-center justify-center h-40 w-64 border border-gray-200 hover:border-virtus-yellow transition-colors flex-shrink-0 group overflow-hidden relative">
-                        {sponsor.logo ? (
-                          sponsor.url ? (
-                            <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="relative w-full h-full block">
-                              <Image
-                                src={sponsor.logo}
-                                alt={sponsor.name}
-                                fill
-                                className="object-contain"
-                                sizes="256px"
-                              />
-                            </a>
-                          ) : (
-                            <Image
-                              src={sponsor.logo}
-                              alt={sponsor.name}
-                              fill
-                              className="object-contain"
-                              sizes="256px"
-                            />
-                          )
-                        ) : (
-                          <span className="text-lg font-bold text-gray-400">{sponsor.name}</span>
-                        )}
-                      </div>
-                    )) : [1, 2, 3].map((i) => (
-                      <div key={i} className="bg-gray-50 rounded p-8 flex items-center justify-center h-40 w-64 border border-gray-200 flex-shrink-0">
-                        <span className="text-lg font-bold text-gray-400">Sponsor {i}</span>
-                      </div>
-                    ))}
-                  </div>
-                  {/* Duplicate for infinite scroll */}
-                  <div className="flex gap-4 pr-4">
-                    {sponsors.length > 0 ? sponsors.map((sponsor: any, i: number) => (
-                      <div key={`dup-${i}`} className="bg-white rounded p-1 flex items-center justify-center h-40 w-64 border border-gray-200 hover:border-virtus-yellow transition-colors flex-shrink-0 group overflow-hidden relative">
-                        {sponsor.logo ? (
-                          sponsor.url ? (
-                            <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="relative w-full h-full block">
-                              <Image
-                                src={sponsor.logo}
-                                alt={sponsor.name}
-                                fill
-                                className="object-contain"
-                                sizes="256px"
-                              />
-                            </a>
-                          ) : (
-                            <Image
-                              src={sponsor.logo}
-                              alt={sponsor.name}
-                              fill
-                              className="object-contain"
-                              sizes="256px"
-                            />
-                          )
-                        ) : (
-                          <span className="text-lg font-bold text-gray-400">{sponsor.name}</span>
-                        )}
-                      </div>
-                    )) : [1, 2, 3].map((i) => (
-                      <div key={`dup-${i}`} className="bg-gray-50 rounded p-8 flex items-center justify-center h-40 w-64 border border-gray-200 flex-shrink-0">
-                        <span className="text-lg font-bold text-gray-400">Sponsor {i}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <HorizontalSponsorCarousel sponsors={sponsors} />
             </section>
 
             {/* Instagram Feed */}
